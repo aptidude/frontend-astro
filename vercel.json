@@ -42,10 +42,6 @@
   ],
   "rewrites": [
     {
-      "source": "/",
-      "destination": "https://app.aptidude.in/"
-    },
-    {
       "source": "/app/question/:path*",
       "destination": "https://app.aptidude.in/question/:path*"
     },
