@@ -8,7 +8,9 @@
     "build": "astro build",
     "build:prod": "cross-env API_URL=https://tdgc50rc8h.execute-api.ap-south-1.amazonaws.com PUBLIC_APP_URL=https://aptidude.in/app astro build",
     "preview": "astro preview --port 4321",
-    "astro": "astro"
+    "astro": "astro",
+    "indexnow": "node scripts/submit-indexnow.js",
+    "indexnow:dry": "node scripts/submit-indexnow.js --dry-run"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.6.0",
