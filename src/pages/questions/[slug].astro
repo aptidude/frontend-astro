@@ -192,10 +192,9 @@ const breadcrumbSchema = {
     </article>
 
     <div class="solve-cta">
-      <p class="redirect-notice">Loading interactive solver...</p>
       <h2>Solve This Question</h2>
       <p>Get instant feedback with detailed step-by-step solution</p>
-      <a href={appUrl} class="btn-primary" id="solve-cta">Start Solving →</a>
+      <a href={appUrl} class="btn-primary">Start Solving →</a>
     </div>
 
     <section class="practice-links">
@@ -233,27 +232,11 @@ const breadcrumbSchema = {
 
   <!-- Auto-redirect script for production -->
   <script define:vars={{ appUrl }}>
-    // Quick redirect after minimal delay (500ms)
-    // Just enough time for content to flash for SEO bots
-    setTimeout(() => {
-      // Only redirect if user hasn't scrolled or interacted
-      if (window.scrollY < 100) {
-        window.location.href = appUrl;
-      }
-    }, 500);
-    
-    // Handle CTA click
-    document.getElementById('solve-cta')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.location.href = appUrl;
+    // Instant redirect - HTML content is already indexed by Google before JS runs
+    // Using requestAnimationFrame ensures the page has rendered at least once
+    requestAnimationFrame(() => {
+      window.location.replace(appUrl);
     });
   </script>
 </BaseLayout>
 
-<style>
-  .redirect-notice {
-    font-size: var(--text-xs);
-    color: var(--text-muted);
-    margin-bottom: var(--space-3);
-  }
-</style>
