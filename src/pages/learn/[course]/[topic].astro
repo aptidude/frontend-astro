@@ -1,0 +1,547 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import metaData from '../../../data/meta.json';
+import { fetchAllCourses, fetchAllQuestions } from '../../../utils/dataFetcher';
+import { generateAllQuestionSEO } from '../../../utils/seoGenerator';
+import { renderMarkdown } from '../../../utils/markdownRenderer';
+
+export const getStaticPaths = (async () => {
+  // Only the 5 core learning courses (must be inside function for build context)
+  const coreCoursesList = [
+    'quantitative-aptitude',
+    'logical-reasoning', 
+    'reading-comprehension',
+    'verbal-ability',
+    'data-interpretation'
+  ];
+
+  const paths: any[] = [];
+  
+  console.log('🚀 Building Learn Topic pages...');
+  const startTime = Date.now();
+  
+  // Fetch courses from API (already includes topic data with content)
+  const courses = await fetchAllCourses();
+  
+  // Fetch questions for linking
+  const questions = await fetchAllQuestions();
+  const seoMap = generateAllQuestionSEO(questions);
+  
+  // Filter to only core courses
+  const coreCourses = courses.filter(c => coreCoursesList.includes(c.slug));
+  
+  for (const course of coreCourses) {
+    // Collect all topics first
+    const allTopics: any[] = [];
+    
+    for (const subjectItem of course.subjects || []) {
+      const subject = subjectItem.subject || subjectItem;
+      if (!subject?.topics) continue;
+      
+      for (const topicItem of subject.topics) {
+        const topic = topicItem.topic || topicItem;
+        if (!topic || !topic.isPublished) continue;
+        allTopics.push(topic);
+      }
+    }
+    
+    // Now generate paths using collected topics (no extra API calls!)
+    for (const topic of allTopics) {
+      // Find related questions
+      const relatedQuestions = questions
+        .filter(q => {
+          if (!q.topic) return false;
+          const qTopicLower = q.topic.toLowerCase().replace(/[^a-z0-9]/g, '');
+          const topicLower = topic.title.toLowerCase().replace(/[^a-z0-9]/g, '');
+          return qTopicLower.includes(topicLower) || topicLower.includes(qTopicLower);
+        })
+        .slice(0, 6)
+        .map(q => ({
+          question: q,
+          seo: seoMap.get(q.questionNumber)
+        }))
+        .filter(item => item.seo);
+      
+      // Get sibling topics (exclude current)
+      const siblingTopics = allTopics
+        .filter(t => t.slug !== topic.slug)
+        .slice(0, 6)
+        .map(t => ({
+          slug: t.slug,
+          title: t.title,
+          path: `/learn/${course.slug}/${t.slug}`
+        }));
+      
+      // Get SEO metadata from meta.json if available
+      const metaTopicKey = Object.keys(metaData.topics).find(
+        key => (metaData.topics as any)[key].path === `/learn/${course.slug}/${topic.slug}`
+      );
+      const metaTopic = metaTopicKey ? (metaData.topics as any)[metaTopicKey] : null;
+      
+      paths.push({
+        params: { course: course.slug, topic: topic.slug },
+        props: {
+          topic: topic,
+          course: {
+            slug: course.slug,
+            title: course.title,
+            path: `/learn/${course.slug}`
+          },
+          metaTopic,
+          relatedQuestions,
+          siblingTopics
+        }
+      });
+    }
+  }
+  
+  const buildTime = ((Date.now() - startTime) / 1000).toFixed(2);
+  console.log(`✅ Built ${paths.length} Learn Topic pages in ${buildTime}s\n`);
+  
+  return paths;
+}) satisfies GetStaticPaths;
+
+interface Props {
+  topic: {
+    _id: string;
+    title: string;
+    slug: string;
+    content?: string;
+    description?: string;
+    headings?: { id: string; text: string; level: number }[];
+  };
+  course: {
+    slug: string;
+    title: string;
+    path: string;
+  };
+  metaTopic?: {
+    title: string;
+    description: string;
+    keywords: string;
+    path: string;
+  };
+  relatedQuestions: Array<{ question: any; seo: any }>;
+  siblingTopics: Array<{ slug: string; title: string; path: string }>;
+}
+
+const { topic, course, metaTopic, relatedQuestions, siblingTopics } = Astro.props;
+
+// Detect development mode
+const isDev = import.meta.env.DEV;
+const APP_URL = isDev 
+  ? 'http://localhost:5173' 
+  : (import.meta.env.PUBLIC_APP_URL || 'https://aptidude.in/app');
+
+const SITE_URL = isDev ? 'http://localhost:4321' : 'https://aptidude.in';
+
+// URL for redirect
+const appUrl = `${APP_URL}/learn/${course.slug}/${topic.slug}`;
+
+// SEO data - use meta.json if available, otherwise generate from topic
+const title = metaTopic?.title || `${topic.title} - Learn ${course.title} | AptiDude`;
+const description = metaTopic?.description || topic.description || `Learn ${topic.title} with detailed explanations and practice questions. Master this topic for competitive exams.`;
+const keywords = metaTopic?.keywords || `${topic.title}, ${course.title}, aptitude, learn, practice`;
+const canonical = `${SITE_URL}/learn/${course.slug}/${topic.slug}`;
+
+// Render topic content
+const renderedContent = topic.content ? renderMarkdown(topic.content) : '';
+
+// Topic Schema
+const topicSchema = {
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": topic.title,
+  "description": description,
+  "url": canonical,
+  "learningResourceType": "article",
+  "educationalLevel": "Beginner to Advanced",
+  "isPartOf": {
+    "@type": "Course",
+    "name": course.title,
+    "url": `${SITE_URL}${course.path}`
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "AptiDude",
+    "sameAs": SITE_URL
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  }
+};
+
+// Breadcrumb Schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+    { "@type": "ListItem", "position": 2, "name": "Learn", "item": `${SITE_URL}/learn` },
+    { "@type": "ListItem", "position": 3, "name": course.title, "item": `${SITE_URL}${course.path}` },
+    { "@type": "ListItem", "position": 4, "name": topic.title, "item": canonical }
+  ]
+};
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonical={canonical}
+  schema={topicSchema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/learn">Learn</a></li>
+        <li><a href={course.path}>{course.title}</a></li>
+        <li aria-current="page">{topic.title}</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+    <article class="topic-article">
+      <header class="topic-header">
+        <div class="topic-badge">{course.title}</div>
+        <h1>{topic.title}</h1>
+        {topic.description && <p class="topic-description">{topic.description}</p>}
+        
+        <!-- Auto-redirect notice -->
+        <div class="redirect-notice">
+          <p>Loading interactive content...</p>
+          <noscript>
+            <a href={appUrl} class="btn-primary">Continue to Full Lesson →</a>
+          </noscript>
+        </div>
+      </header>
+
+      <!-- Topic Content -->
+      {renderedContent && (
+        <section class="topic-content markdown-body">
+          <Fragment set:html={renderedContent} />
+        </section>
+      )}
+
+      <!-- Table of Contents -->
+      {topic.headings && topic.headings.length > 0 && (
+        <aside class="toc">
+          <h3>In This Topic</h3>
+          <ul>
+            {topic.headings.map(heading => (
+              <li class={`toc-level-${heading.level}`}>
+                <a href={`#${heading.id}`}>{heading.text}</a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )}
+
+      <!-- Related Questions -->
+      {relatedQuestions.length > 0 && (
+        <section class="related-questions">
+          <h2>Practice Questions on {topic.title}</h2>
+          <div class="questions-list">
+            {relatedQuestions.slice(0, 6).map(({ question: q, seo }) => (
+              <a href={`/questions/${seo.slug}`} class="question-link">
+                <span class={`badge badge-${q.difficulty?.toLowerCase() || 'medium'}`}>{q.difficulty || 'Medium'}</span>
+                <span class="question-text">
+                  {typeof q.statement === 'string' && !q.statement.startsWith('http') 
+                    ? q.statement.substring(0, 80) + '...' 
+                    : `${topic.title} Question`}
+                </span>
+                <span class="question-arrow">→</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- CTA Section -->
+      <section class="topic-cta">
+        <h2>Start Learning {topic.title}</h2>
+        <p>Get access to detailed lessons, video explanations, and interactive practice.</p>
+        <a href={appUrl} class="btn-primary" id="main-cta">Open Full Lesson →</a>
+      </section>
+
+      <!-- Related Topics -->
+      {siblingTopics.length > 0 && (
+        <section class="related-topics">
+          <h3>More {course.title} Topics</h3>
+          <div class="topics-list">
+            {siblingTopics.map(t => (
+              <a href={t.path} class="related-topic-link">{t.title}</a>
+            ))}
+          </div>
+          <a href={course.path} class="view-all">View all {course.title} topics →</a>
+        </section>
+      )}
+    </article>
+  </main>
+
+  <!-- Redirect script - quick redirect for better UX -->
+  <script define:vars={{ appUrl }}>
+    // Quick redirect after minimal delay (500ms)
+    // Just enough time for content to flash for SEO bots
+    setTimeout(() => {
+      // Only redirect if user hasn't scrolled or interacted
+      if (window.scrollY < 50) {
+        window.location.href = appUrl;
+      }
+    }, 500);
+    
+    // Handle CTA click
+    document.getElementById('main-cta')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.href = appUrl;
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  .topic-article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: var(--space-8) 0;
+  }
+  
+  .topic-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+  }
+  
+  .topic-badge {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    margin-bottom: var(--space-3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .topic-header h1 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-3);
+  }
+  
+  .topic-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-6);
+  }
+  
+  .redirect-notice {
+    background: var(--bg-secondary);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    margin-top: var(--space-4);
+  }
+  
+  .redirect-notice p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.875rem;
+  }
+  
+  .topic-content {
+    margin-bottom: var(--space-10);
+    line-height: 1.8;
+  }
+  
+  .topic-content :global(h2) {
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-4);
+    font-size: 1.5rem;
+  }
+  
+  .topic-content :global(h3) {
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-3);
+    font-size: 1.25rem;
+  }
+  
+  .topic-content :global(p) {
+    margin-bottom: var(--space-4);
+    color: var(--text-secondary);
+  }
+  
+  .topic-content :global(ul), .topic-content :global(ol) {
+    margin-bottom: var(--space-4);
+    padding-left: var(--space-6);
+  }
+  
+  .topic-content :global(li) {
+    margin-bottom: var(--space-2);
+    color: var(--text-secondary);
+  }
+  
+  .topic-content :global(pre) {
+    background: var(--bg-secondary);
+    padding: var(--space-4);
+    border-radius: var(--radius);
+    overflow-x: auto;
+    margin-bottom: var(--space-4);
+  }
+  
+  .topic-content :global(code) {
+    background: var(--bg-secondary);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    font-size: 0.875em;
+  }
+  
+  .topic-content :global(pre code) {
+    background: none;
+    padding: 0;
+  }
+  
+  .toc {
+    background: var(--bg-secondary);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-10);
+  }
+  
+  .toc h3 {
+    margin-bottom: var(--space-4);
+    font-size: 1rem;
+  }
+  
+  .toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .toc li {
+    margin-bottom: var(--space-2);
+  }
+  
+  .toc a {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    transition: color var(--transition);
+  }
+  
+  .toc a:hover {
+    color: var(--primary);
+  }
+  
+  .toc-level-3 {
+    padding-left: var(--space-4);
+  }
+  
+  .related-questions {
+    margin-bottom: var(--space-10);
+  }
+  
+  .related-questions h2 {
+    margin-bottom: var(--space-6);
+  }
+  
+  .questions-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  .question-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all var(--transition);
+  }
+  
+  .question-link:hover {
+    border-color: var(--primary);
+    transform: translateX(4px);
+  }
+  
+  .question-text {
+    flex: 1;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .question-arrow {
+    color: var(--primary);
+    opacity: 0;
+    transition: opacity var(--transition);
+  }
+  
+  .question-link:hover .question-arrow {
+    opacity: 1;
+  }
+  
+  .topic-cta {
+    text-align: center;
+    background: var(--bg-secondary);
+    padding: var(--space-10);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-10);
+  }
+  
+  .topic-cta h2 {
+    margin-bottom: var(--space-3);
+  }
+  
+  .topic-cta p {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+  }
+  
+  .related-topics {
+    border-top: 1px solid var(--border);
+    padding-top: var(--space-8);
+  }
+  
+  .related-topics h3 {
+    margin-bottom: var(--space-4);
+  }
+  
+  .topics-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+  }
+  
+  .related-topic-link {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    transition: all var(--transition);
+  }
+  
+  .related-topic-link:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  
+  .view-all {
+    color: var(--primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+</style>

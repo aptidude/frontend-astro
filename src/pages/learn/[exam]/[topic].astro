@@ -1,0 +1,286 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { fetchAllQuestions, buildQuestionIndexes } from '../../../utils/dataFetcher';
+import { generateAllQuestionSEO, createSlug } from '../../../utils/seoGenerator';
+import type { Question } from '../../../types';
+
+export const getStaticPaths = (async () => {
+  console.log('🚀 Building Topic pages...');
+  const startTime = Date.now();
+  
+  const questions = await fetchAllQuestions();
+  const indexes = buildQuestionIndexes(questions);
+  const seoMap = generateAllQuestionSEO(questions);
+  
+  const paths: any[] = [];
+  
+  // Iterate over all exam+topic combinations
+  for (const [key, topicQuestions] of indexes.byExamAndTopic) {
+    const [examName, topicName] = key.split('::');
+    const examSlug = createSlug(examName);
+    const topicSlug = createSlug(topicName);
+    
+    // Get all questions for this topic with their SEO data
+    const questionsWithSeo = topicQuestions
+      .sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime())
+      .map(q => ({
+        question: q,
+        seo: seoMap.get(q.questionNumber)!
+      }))
+      .filter(item => item.seo);
+    
+    // Get difficulty breakdown
+    const difficultyCount = {
+      easy: topicQuestions.filter(q => q.difficulty?.toLowerCase() === 'easy').length,
+      medium: topicQuestions.filter(q => q.difficulty?.toLowerCase() === 'medium').length,
+      hard: topicQuestions.filter(q => q.difficulty?.toLowerCase() === 'hard').length
+    };
+    
+    paths.push({
+      params: { exam: examSlug, topic: topicSlug },
+      props: {
+        examName,
+        examSlug,
+        topicName,
+        topicSlug,
+        questions: questionsWithSeo,
+        totalQuestions: topicQuestions.length,
+        difficultyCount
+      }
+    });
+  }
+  
+  const buildTime = ((Date.now() - startTime) / 1000).toFixed(2);
+  console.log(`✅ Built ${paths.length} Topic pages in ${buildTime}s\n`);
+  
+  return paths;
+}) satisfies GetStaticPaths;
+
+interface Props {
+  examName: string;
+  examSlug: string;
+  topicName: string;
+  topicSlug: string;
+  questions: Array<{ question: Question; seo: { slug: string; title: string; description: string } }>;
+  totalQuestions: number;
+  difficultyCount: { easy: number; medium: number; hard: number };
+}
+
+const { examName, examSlug, topicName, topicSlug, questions, totalQuestions, difficultyCount } = Astro.props;
+
+// Detect development mode
+const isDev = import.meta.env.DEV;
+const APP_URL = isDev 
+  ? 'http://localhost:5173' 
+  : (import.meta.env.PUBLIC_APP_URL || 'https://aptidude.in/app');
+
+// SEO data
+const title = `${topicName} Questions for ${examName} - ${totalQuestions} Practice Problems | AptiDude`;
+const description = `Practice ${totalQuestions} ${topicName} questions for ${examName}. Includes ${difficultyCount.easy} easy, ${difficultyCount.medium} medium, and ${difficultyCount.hard} hard level problems with step-by-step solutions.`;
+const canonical = `https://aptidude.in/learn/${examSlug}/${topicSlug}`;
+
+// Pagination - show first 50 questions
+const displayQuestions = questions.slice(0, 50);
+const hasMore = questions.length > 50;
+
+// Breadcrumb Schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aptidude.in" },
+    { "@type": "ListItem", "position": 2, "name": examName, "item": `https://aptidude.in/learn/${examSlug}` },
+    { "@type": "ListItem", "position": 3, "name": topicName, "item": canonical }
+  ]
+};
+
+// ItemList Schema
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": `${topicName} Questions`,
+  "description": description,
+  "numberOfItems": totalQuestions,
+  "itemListElement": displayQuestions.slice(0, 10).map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "url": `https://aptidude.in/questions/${item.seo.slug}`
+  }))
+};
+
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  keywords={`${topicName}, ${examName}, aptitude, practice questions, ${topicName.toLowerCase()} problems`}
+  canonical={canonical}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href={`/learn/${examSlug}`}>{examName}</a></li>
+        <li aria-current="page">{topicName}</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header class="topic-header">
+      <h1>{topicName}</h1>
+      <p class="topic-exam">
+        <a href={`/learn/${examSlug}`}>{examName}</a>
+      </p>
+      <div class="topic-stats">
+        <span class="stat"><strong>{totalQuestions}</strong> Questions</span>
+        {difficultyCount.easy > 0 && <span class="stat easy"><strong>{difficultyCount.easy}</strong> Easy</span>}
+        {difficultyCount.medium > 0 && <span class="stat medium"><strong>{difficultyCount.medium}</strong> Medium</span>}
+        {difficultyCount.hard > 0 && <span class="stat hard"><strong>{difficultyCount.hard}</strong> Hard</span>}
+      </div>
+    </header>
+
+    <section class="questions-list">
+      <h2>Practice Questions</h2>
+      <div class="question-grid">
+        {displayQuestions.map(({ question: q, seo: qSeo }, index) => (
+          <a href={`/questions/${qSeo.slug}`} class="question-card">
+            <span class="question-number">#{index + 1}</span>
+            <div class="card-header">
+              {q.difficulty && <span class={`badge badge-${q.difficulty.toLowerCase()}`}>{q.difficulty}</span>}
+              {q.type && <span class="badge">{q.type}</span>}
+            </div>
+            <p>{typeof q.statement === 'string' && !q.statement.startsWith('http') 
+              ? q.statement.substring(0, 120) + '...' 
+              : `${topicName} Question ${index + 1}`}</p>
+          </a>
+        ))}
+      </div>
+      
+      {hasMore && (
+        <div class="load-more">
+          <p>Showing {displayQuestions.length} of {totalQuestions} questions</p>
+          <a href={`${APP_URL}/practice?exam=${encodeURIComponent(examName)}&topic=${encodeURIComponent(topicName)}`} class="btn-secondary">
+            View All Questions →
+          </a>
+        </div>
+      )}
+    </section>
+
+    <section class="cta-section">
+      <h2>Start Practicing {topicName}</h2>
+      <p>Test your understanding with interactive practice and detailed solutions.</p>
+      <a href={`${APP_URL}/practice?exam=${encodeURIComponent(examName)}&topic=${encodeURIComponent(topicName)}`} class="btn-primary" data-app-redirect={`${APP_URL}/practice?exam=${encodeURIComponent(examName)}&topic=${encodeURIComponent(topicName)}`}>
+        Practice Now →
+      </a>
+    </section>
+
+    <nav class="back-nav">
+      <a href={`/learn/${examSlug}`} class="back-link">
+        <span class="back-arrow">←</span>
+        <span>Back to all {examName} topics</span>
+      </a>
+    </nav>
+  </main>
+</BaseLayout>
+
+<style>
+  .topic-header {
+    text-align: center;
+    padding: var(--space-8) 0 var(--space-6);
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  
+  .topic-header h1 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-2);
+  }
+  
+  .topic-exam {
+    margin-bottom: var(--space-4);
+  }
+  
+  .topic-exam a {
+    color: var(--primary);
+    font-size: var(--text-sm);
+  }
+  
+  .topic-stats {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .topic-stats .stat {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+  }
+  
+  .topic-stats .stat strong {
+    color: var(--text-primary);
+  }
+  
+  .topic-stats .stat.easy strong { color: var(--easy); }
+  .topic-stats .stat.medium strong { color: var(--medium); }
+  .topic-stats .stat.hard strong { color: var(--hard); }
+  
+  .questions-list {
+    margin-bottom: var(--space-10);
+  }
+  
+  .questions-list h2 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-6);
+  }
+  
+  .question-number {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: var(--space-2);
+    display: block;
+  }
+  
+  .load-more {
+    text-align: center;
+    padding: var(--space-6) 0;
+  }
+  
+  .load-more p {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-bottom: var(--space-4);
+  }
+  
+  .back-nav {
+    padding: var(--space-6) 0;
+  }
+  
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    transition: all var(--transition);
+  }
+  
+  .back-link:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  
+  .back-arrow {
+    font-size: var(--text-base);
+  }
+</style>

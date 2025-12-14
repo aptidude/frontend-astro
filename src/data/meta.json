@@ -1,0 +1,1154 @@
+{
+  "site": {
+    "name": "AptiDude - Practice Aptitude Questions & Online Aptitude Tests for Competitive Exams",
+    "description": "Practice aptitude questions and take free online aptitude tests with AptiDude. Prepare for competitive exams like SSC CGL, RRB NTPC, Bank PO, placements, and job interviews with 10000+ quantitative aptitude and reasoning questions.",
+    "url": "https://aptidude.in",
+    "logo": "/logo-social.png",
+    "socialMedia": {
+      "linkedin": "https://www.linkedin.com/company/theaptidude",
+      "instagram": "https://www.instagram.com/aptidude.in",
+      "twitter": "https://x.com/aptidudedotin",
+      "youtube": "https://www.youtube.com/@aptidudedotin"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Aptitude Questions & Tests - #1 Online Aptitude Practice Platform | AptiDude",
+      "description": "Practice 1000+ aptitude questions with detailed solutions. Master aptitude tests for competitive exams, placements & interviews. Free aptitude practice online.",
+      "primaryKeyword": "aptitude",
+      "keywords": "aptitude, aptitude questions, aptitude test, SSC CGL, RRB NTPC, Bank PO, placements, quantitative, reasoning, general aptitude, aptitude practice, verbal ability, reading comprehension",
+      "path": "/"
+    },
+    "learn": {
+      "title": "Learn Aptitude Online - Free Courses & Tutorials | AptiDude",
+      "description": "Learn aptitude from basics with our free online courses. Master quantitative aptitude, logical reasoning, reading comprehension, verbal ability & data interpretation concepts.",
+      "primaryKeyword": "learn aptitude",
+      "keywords": "learn aptitude, aptitude courses, aptitude tutorials, free aptitude learning, quantitative aptitude basics, logical reasoning concepts, reading comprehension tips, verbal ability course, aptitude fundamentals",
+      "path": "/learn"
+    },
+    "practice": {
+      "title": "Free Aptitude Questions Practice with Solutions | AptiDude",
+      "description": "Practice unlimited aptitude questions with detailed solutions. Improve your aptitude skills with our comprehensive question bank for competitive exams.",
+      "primaryKeyword": "aptitude questions",
+      "keywords": "aptitude questions, practice aptitude, free aptitude questions, aptitude problems, aptitude question bank, aptitude practice test, competitive exam aptitude, placement aptitude questions",
+      "path": "/practice"
+    },
+    "compete": {
+      "title": "Aptitude Tests & Contests - Compete Online | AptiDude",
+      "description": "Take live aptitude tests and compete with thousands of students. Participate in online aptitude contests and improve your ranking.",
+      "primaryKeyword": "aptitude tests",
+      "keywords": "aptitude tests, online aptitude contest, aptitude competition, competitive aptitude test, live aptitude exam, aptitude ranking, aptitude challenge",
+      "path": "/compete"
+    },
+    "question-lists": {
+      "title": "Aptitude Question Lists - Topic-wise Practice Sets | AptiDude",
+      "description": "Browse curated aptitude question lists organized by topics. Practice specific areas like quantitative aptitude, reasoning, and verbal ability.",
+      "primaryKeyword": "topic wise aptitude questions",
+      "keywords": "aptitude question lists, topic wise aptitude questions, aptitude practice sets, quantitative aptitude questions, reasoning questions, verbal aptitude questions",
+      "path": "/question-lists"
+    },
+    "analytics": {
+      "title": "Aptitude Performance Analytics - Track Your Progress | AptiDude",
+      "description": "Analyze your aptitude test performance with detailed insights. Track your progress in different aptitude topics and improve weak areas.",
+      "primaryKeyword": "aptitude test performance analysis",
+      "keywords": "aptitude analytics, aptitude performance, aptitude progress tracking, aptitude insights, test analysis",
+      "path": "/analytics"
+    },
+    "discuss": {
+      "title": "Aptitude Discussion Forum - Solve Doubts Together | AptiDude",
+      "description": "Join our aptitude discussion community. Ask aptitude questions, share solutions, and learn from peers in our active aptitude forum.",
+      "primaryKeyword": "aptitude discussion",
+      "keywords": "aptitude discussion, aptitude forum, aptitude help, aptitude doubts, aptitude community, aptitude solutions, ask aptitude questions",
+      "path": "/discuss"
+    },
+    "catmocks": {
+      "title": "CAT Mock Test Tracker & Analytics | AIMCAT, SimCAT, CDC, DashCAT, iCAT",
+      "description": "All-in-one CAT mock test tracker used by 500+ aspirants. Record and analyse AIMCAT, SimCAT, CL CDC Flexi & Pro, Cracku DashCAT, iQuanta iCAT and more. Get section-wise accuracy, percentile trends, leaderboards, averages, and last-test comparisons to sharpen your CAT preparation.",
+      "primaryKeyword": "CAT mock test tracker",
+      "keywords": "CAT mock tracker, CAT sectional analysis, AIMCAT tracker, SimCAT analytics, CL CDC Flexi Pro analysis, Cracku DashCAT performance, iQuanta iCAT scores, CAT mock percentile tracker, CAT preparation dashboard",
+      "path": "/catmocks"
+    },
+    "about": {
+      "title": "About AptiDude - Best Platform for Aptitude Learning",
+      "description": "Learn about AptiDude's mission to make aptitude learning accessible. We help students excel in aptitude tests and competitive exams.",
+      "primaryKeyword": "aptitude platform",
+      "keywords": "about aptidude, aptitude platform, aptitude learning platform, competitive exam preparation, aptitude education",
+      "path": "/about"
+    },
+    "contact": {
+      "title": "Contact AptiDude - Get Help with Aptitude Learning",
+      "description": "Need help with aptitude questions or our platform? Contact the AptiDude team for support, feedback, or partnership inquiries.",
+      "primaryKeyword": "aptitude help",
+      "keywords": "contact aptidude, aptitude help, aptitude support, aptitude questions help, customer support",
+      "path": "/contact"
+    },
+    "ratings-explained": {
+      "title": "AptiDude Rating System Explained | Contest & Practice Ratings Guide",
+      "description": "Understand how AptiDude calculates contest and practice ratings. Learn rating titles, K-factor rules, provisional status, and tips to improve your AptiDude rating.",
+      "primaryKeyword": "aptidude rating system",
+      "keywords": "aptidude ratings, contest ratings explained, practice rating guide, rating titles, k-factor, improve aptitude rating",
+      "path": "/ratings-explained"
+    },
+    "blogs": {
+      "title": "AptiDude Blog | Expert Articles on Exams, Placements & Aptitude",
+      "description": "Read the latest articles on exam preparation, aptitude tricks, placement tips, and career insights. Stay updated and get smarter every day with AptiDude.",
+      "primaryKeyword": "exam preparation blogs",
+      "keywords": "exam preparation, aptitude blogs, campus placement tips, reasoning tricks, study motivation, aptitude strategy",
+      "path": "/blogs"
+    }
+  },
+  "courses": {
+    "quantitative-aptitude": {
+      "title": "Quantitative Aptitude Course | Master Arithmetic, Algebra, Geometry & More – AptiDude",
+      "description": "Crack competitive exams with our in-depth Quantitative Aptitude course. Learn arithmetic, algebra, geometry, number systems, and more across 42 expertly crafted topics. Ideal for SSC, Bank PO, CUET, and other aptitude tests.",
+      "primaryKeyword": "quantitative aptitude",
+      "keywords": "quantitative aptitude, numerical ability, math aptitude, arithmetic, algebra, geometry, number system, percentages, profit and loss, time and work, speed distance time, probability, statistics, SSC CGL maths, bank PO quant",
+      "path": "/learn/quantitative-aptitude"
+    },
+    "logical-reasoning": {
+      "title": "Logical Reasoning Course | Learn Analytical, Verbal & Non-Verbal Reasoning – AptiDude",
+      "description": "Sharpen your logical reasoning with 29 structured topics covering verbal, non-verbal, and analytical reasoning. Solve puzzles, blood relations, syllogisms, and more to ace aptitude exams like SSC and Bank PO.",
+      "primaryKeyword": "logical reasoning",
+      "keywords": "logical reasoning, analytical reasoning, reasoning aptitude, puzzles, syllogisms, coding decoding, blood relations, arrangements, logical puzzles, non-verbal reasoning, verbal reasoning, SSC reasoning, banking reasoning",
+      "path": "/learn/logical-reasoning"
+    },
+    "reading-comprehension": {
+      "title": "Reading Comprehension Course | Analyze Passages, Improve Accuracy – AptiDude",
+      "description": "Master reading comprehension through 26 focused topics. Learn to tackle different passage types, critical reasoning, inference, and main idea questions effectively for SSC CGL, CAT, and CUET exams.",
+      "primaryKeyword": "reading comprehension",
+      "keywords": "reading comprehension, passage analysis, comprehension questions, factual passages, narrative passages, critical reasoning, inference questions, main idea questions, SSC English, CUET English",
+      "path": "/learn/reading-comprehension"
+    },
+    "verbal-ability": {
+      "title": "Verbal Ability Course | Build Grammar, Vocabulary & Comprehension – AptiDude",
+      "description": "Enhance your verbal skills with 24 modules covering English grammar, vocabulary, synonyms, antonyms, and sentence correction. Perfect for SSC, Bank PO, CUET, and MBA entrance exams.",
+      "primaryKeyword": "verbal ability",
+      "keywords": "verbal ability, english aptitude, grammar, vocabulary, comprehension, synonyms, antonyms, verbal reasoning, english language skills, sentence correction, para jumbles, SSC CHSL English, bank clerk English",
+      "path": "/learn/verbal-ability"
+    },
+    "data-interpretation": {
+      "title": "Data Interpretation Course | Analyze Graphs, Charts & Solve LRDI – AptiDude",
+      "description": "Learn to interpret data from bar charts, line graphs, tables, and pie charts across 19 topics. Develop LRDI strategies for exams like CAT, SSC CGL, and IBPS PO.",
+      "primaryKeyword": "data interpretation",
+      "keywords": "data interpretation, DI, data analysis, charts and graphs, tables, pie charts, bar graphs, line charts, data aptitude, LRDI, logical reasoning data interpretation, CAT LRDI, SSC CGL DI",
+      "path": "/learn/data-interpretation"
+    },
+    "cuet": {
+      "title": "CUET Preparation Course | Full CUET Syllabus with Practice & Mocks – AptiDude",
+      "description": "Prepare for the CUET exam with detailed topic-wise content, full-length mock tests, and solutions. Covers all CUET sections for science, commerce, and humanities streams.",
+      "primaryKeyword": "CUET preparation",
+      "keywords": "CUET preparation, CUET exam, CUET practice, CUET mock test, CUET syllabus, CUET questions, common university entrance test, CUET aptitude, CUET English",
+      "path": "/learn/cuet"
+    },
+    "cat": {
+      "title": "CAT Preparation Course | Ace Quant, VARC & DILR for MBA Entrance – AptiDude",
+      "description": "Comprehensive CAT prep covering Quantitative Aptitude, Verbal Ability, and Data Interpretation & Logical Reasoning (DILR). Includes practice questions and mock tests for CAT 2025.",
+      "primaryKeyword": "CAT preparation",
+      "keywords": "CAT preparation, CAT exam, CAT practice, CAT mock test, CAT syllabus, CAT questions, common admission test, MBA entrance exam, CAT VARC, CAT DILR, CAT quant",
+      "path": "/learn/cat"
+    },
+    "ssc": {
+      "title": "SSC Exam Preparation Course | CGL, CHSL, MTS Covered – AptiDude",
+      "description": "Prepare for all SSC exams including CGL, CHSL, and MTS. Includes mock tests, previous year questions, and topic-wise practice for reasoning, math, English, and GK.",
+      "primaryKeyword": "SSC preparation",
+      "keywords": "SSC preparation, SSC exam, SSC CGL, SSC CHSL, SSC MTS, SSC practice, SSC mock test, SSC previous year papers, SSC maths, SSC reasoning, SSC English, staff selection commission",
+      "path": "/learn/ssc"
+    },
+    "banking": {
+      "title": "Bank Exam Preparation Course | Cover IBPS, SBI, RBI – AptiDude",
+      "description": "Master bank exams with targeted practice for IBPS, SBI, and RBI. Learn quantitative aptitude, reasoning, English, and banking awareness for PO and Clerk roles.",
+      "primaryKeyword": "banking exam preparation",
+      "keywords": "banking exam preparation, IBPS preparation, SBI exam, RBI exam, bank PO, bank clerk, banking aptitude, banking reasoning, bank mock test, bank exam syllabus, SBI PO practice",
+      "path": "/learn/banking"
+    },
+    "railways": {
+      "title": "Railway Exam Preparation Course | For RRB NTPC, Group D, ALP – AptiDude",
+      "description": "Get ready for RRB exams like NTPC, Group D, and ALP. Our course includes mock tests, reasoning, math, and general awareness for all railway recruitment exams.",
+      "primaryKeyword": "railway exam preparation",
+      "keywords": "railway exam preparation, RRB NTPC, RRB Group D, RRB ALP, railway recruitment, railway aptitude, railway reasoning, RRB mock test, railway exam syllabus, Indian Railways jobs",
+      "path": "/learn/railways"
+    }
+  },
+  "topics": {
+    "number-system": {
+      "title": "Number System: Practice Questions & Shortcuts for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Number System concepts with 500+ practice questions, shortcuts, and formulas for SSC CGL, RRB NTPC, Bank PO, and other competitive exams. Learn divisibility rules, HCF-LCM, prime numbers, and number properties with detailed solutions and expert tips to solve questions in under 30 seconds.",
+      "primaryKeyword": "number system",
+      "keywords": "number system, SSC CGL number system, RRB NTPC number system, bank PO number system, quantitative aptitude, number system questions, number system shortcuts, divisibility rules, prime numbers, composite numbers, number properties, competitive exam preparation",
+      "path": "/learn/quantitative-aptitude/number-system"
+    },
+    "fractions-and-decimals": {
+      "title": "Fractions and Decimals: Tricks, Formulas & Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Fractions and Decimals with comprehensive practice sets designed for SSC CGL, RRB NTPC, Bank PO examinations. Master conversion techniques, decimal operations, fraction simplification, and comparison methods with 400+ solved examples and time-saving tricks for competitive exams.",
+      "primaryKeyword": "fractions and decimals",
+      "keywords": "fractions and decimals, SSC CGL fractions, RRB NTPC decimals, bank PO fractions, decimal conversion, fraction simplification, decimal operations, quantitative aptitude, fractions tricks, decimal shortcuts, competitive exam math, fraction comparison",
+      "path": "/learn/quantitative-aptitude/fractions-and-decimals"
+    },
+    "hcf-and-lcm": {
+      "title": "HCF & LCM: Important Questions & Shortcuts for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Solve HCF and LCM problems efficiently for SSC CGL, RRB NTPC, Bank PO with proven shortcuts and formulas. Practice 300+ questions covering Euclidean algorithm, prime factorization method, and real-life applications. Master co-prime numbers, LCM-HCF relationships, and time-saving techniques.",
+      "primaryKeyword": "hcf and lcm",
+      "keywords": "HCF LCM, SSC CGL HCF LCM, RRB NTPC HCF LCM, bank PO HCF LCM, highest common factor, least common multiple, prime factorization, Euclidean algorithm, co-prime numbers, quantitative aptitude, competitive exam math, HCF LCM shortcuts",
+      "path": "/learn/quantitative-aptitude/hcf-and-lcm"
+    },
+    "divisibility-rules": {
+      "title": "Divisibility Rules: Key Concepts & Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master all divisibility rules from 2 to 19 for SSC CGL, RRB NTPC, Bank PO success. Learn quick divisibility tests, digital root method, and casting out nines technique. Practice 250+ questions with instant verification methods to boost calculation speed in competitive examinations.",
+      "primaryKeyword": "divisibility rules",
+      "keywords": "divisibility rules, SSC CGL divisibility, RRB NTPC divisibility, bank PO divisibility, divisibility tests, digital root method, casting out nines, divisibility shortcuts, quantitative aptitude, competitive exam tricks, number theory, divisibility by 7 11 13",
+      "path": "/learn/quantitative-aptitude/divisibility-rules"
+    },
+    "advanced-concepts-in-numbers": {
+      "title": "Advanced Number Concepts: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Explore advanced number theory concepts essential for SSC CGL, RRB NTPC, Bank PO examinations. Master cyclicity, unit digits, digital sum, factorial concepts, and Fermat's theorem applications. Practice 200+ challenging questions with detailed explanations and competitive exam strategies.",
+      "primaryKeyword": "advanced concepts in numbers",
+      "keywords": "advanced number concepts, SSC CGL advanced math, RRB NTPC number theory, bank PO advanced concepts, cyclicity, unit digits, digital sum, factorial problems, Fermat theorem, quantitative aptitude, competitive exam preparation, number theory tricks",
+      "path": "/learn/quantitative-aptitude/advanced-concepts-in-numbers"
+    },
+    "averages": {
+      "title": "Averages: Practice Questions & Tips for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Averages concepts for SSC CGL, RRB NTPC, Bank PO with 350+ practice questions. Learn weighted averages, average speed, average age problems, and replacement methods. Discover shortcuts to solve average problems in 15 seconds with step-by-step solutions and exam strategies.",
+      "primaryKeyword": "averages",
+      "keywords": "averages, SSC CGL averages, RRB NTPC averages, bank PO averages, weighted average, average speed, average age, replacement method, quantitative aptitude, averages shortcuts, competitive exam math, mean calculation, averages tricks",
+      "path": "/learn/quantitative-aptitude/averages"
+    },
+    "percentages": {
+      "title": "Percentages: Formulas, Tricks & Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Percentage calculations for SSC CGL, RRB NTPC, Bank PO with comprehensive practice sets. Master percentage increase/decrease, successive percentages, and percentage to fraction conversions. Practice 450+ questions with mental math techniques and competitive exam strategies.",
+      "primaryKeyword": "percentages",
+      "keywords": "percentages, SSC CGL percentage, RRB NTPC percentage, bank PO percentage, percentage increase decrease, successive percentages, percentage shortcuts, quantitative aptitude, percentage tricks, competitive exam math, percentage to fraction, percentage formulas",
+      "path": "/learn/quantitative-aptitude/percentages"
+    },
+    "ratio-and-proportion": {
+      "title": "Ratio & Proportion: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Ratio and Proportion for SSC CGL, RRB NTPC, Bank PO examinations with 400+ solved problems. Learn direct proportion, inverse proportion, continued proportion, and compound ratios. Practice partnership, mixture, and alligation problems with time-saving techniques.",
+      "primaryKeyword": "ratio and proportion",
+      "keywords": "ratio and proportion, SSC CGL ratio proportion, RRB NTPC ratio, bank PO proportion, direct proportion, inverse proportion, continued proportion, compound ratios, partnership problems, quantitative aptitude, ratio shortcuts, competitive exam preparation",
+      "path": "/learn/quantitative-aptitude/ratio-and-proportion"
+    },
+    "mixtures-and-alligations": {
+      "title": "Mixtures & Alligations: Shortcuts & Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Solve Mixtures and Alligations problems efficiently for SSC CGL, RRB NTPC, Bank PO with proven formulas and shortcuts. Master alligation rule, mixture replacement, and successive mixture concepts. Practice 300+ questions with graphical methods and competitive exam strategies.",
+      "primaryKeyword": "mixtures and alligations",
+      "keywords": "mixtures and alligations, SSC CGL mixtures, RRB NTPC alligations, bank PO mixtures, alligation rule, mixture replacement, successive mixtures, quantitative aptitude, mixtures shortcuts, competitive exam math, alligation method, mixture problems",
+      "path": "/learn/quantitative-aptitude/mixtures-and-alligations"
+    },
+    "profit-and-loss": {
+      "title": "Profit & Loss: Tricks, Formulas & Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Profit and Loss calculations for SSC CGL, RRB NTPC, Bank PO with comprehensive practice. Learn cost price, selling price, profit percentage, loss percentage, and discount problems. Practice 500+ questions covering successive discounts, marked price, and competitive exam strategies.",
+      "primaryKeyword": "profit and loss",
+      "keywords": "profit and loss, SSC CGL profit loss, RRB NTPC profit loss, bank PO profit loss, cost price selling price, profit percentage, loss percentage, discount problems, marked price, successive discounts, quantitative aptitude, profit loss shortcuts",
+      "path": "/learn/quantitative-aptitude/profit-and-loss"
+    },
+    "simple-and-compound-interest": {
+      "title": "Simple & Compound Interest: Practice Sets & Shortcuts for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Simple and Compound Interest calculations for SSC CGL, RRB NTPC, Bank PO with 450+ practice questions. Learn SI/CI formulas, compound interest shortcuts, installment problems, and banking concepts. Practice time-principal-rate calculations with competitive exam strategies and quick solving techniques.",
+      "primaryKeyword": "simple and compound interest",
+      "keywords": "simple compound interest, SSC CGL interest, RRB NTPC interest, bank PO interest, SI CI formulas, compound interest shortcuts, installment problems, time principal rate, banking interest, quantitative aptitude, interest calculations, competitive exam preparation",
+      "path": "/learn/quantitative-aptitude/simple-and-compound-interest"
+    },
+    "basic-alzebra": {
+      "title": "Basic Algebra: Formulas & Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Basic Algebra for SSC CGL, RRB NTPC, Bank PO with comprehensive practice covering algebraic identities, factorization, and polynomial operations. Master algebraic expressions, BODMAS, and substitution methods with 350+ solved problems and competitive exam shortcuts.",
+      "primaryKeyword": "basic alzebra",
+      "keywords": "basic algebra, SSC CGL algebra, RRB NTPC algebra, bank PO algebra, algebraic identities, factorization, polynomial operations, algebraic expressions, BODMAS, substitution method, quantitative aptitude, algebra shortcuts, competitive exam math",
+      "path": "/learn/quantitative-aptitude/basic-alzebra"
+    },
+    "surds-and-indices": {
+      "title": "Surds & Indices: Key Concepts & Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Surds and Indices for SSC CGL, RRB NTPC, Bank PO examinations with detailed concept explanations. Learn rationalization, index laws, exponential rules, and radical expressions. Practice 300+ questions covering surds operations, indices properties, and competitive exam problem-solving techniques.",
+      "primaryKeyword": "surds and indices",
+      "keywords": "surds and indices, SSC CGL surds, RRB NTPC indices, bank PO surds indices, rationalization, index laws, exponential rules, radical expressions, surds operations, indices properties, quantitative aptitude, surds shortcuts, competitive exam preparation",
+      "path": "/learn/quantitative-aptitude/surds-and-indices"
+    },
+    "inequalities": {
+      "title": "Inequalities: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Solve Inequalities efficiently for SSC CGL, RRB NTPC, Bank PO with comprehensive practice sets. Master linear inequalities, quadratic inequalities, modulus inequalities, and graphical solutions. Practice 250+ questions with step-by-step solutions and competitive exam strategies.",
+      "primaryKeyword": "inequalities",
+      "keywords": "inequalities, SSC CGL inequalities, RRB NTPC inequalities, bank PO inequalities, linear inequalities, quadratic inequalities, modulus inequalities, graphical solutions, inequality solving, quantitative aptitude, inequalities shortcuts, competitive exam math, mathematical inequalities",
+      "path": "/learn/quantitative-aptitude/inequalities"
+    },
+    "polynomials": {
+      "title": "Polynomials: Formulas & Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Polynomials concepts for SSC CGL, RRB NTPC, Bank PO with detailed theory and practice. Learn polynomial operations, factorization techniques, remainder theorem, and factor theorem. Practice 300+ questions covering polynomial division, roots, and competitive exam applications.",
+      "primaryKeyword": "polynomials",
+      "keywords": "polynomials, SSC CGL polynomials, RRB NTPC polynomials, bank PO polynomials, polynomial operations, factorization techniques, remainder theorem, factor theorem, polynomial division, polynomial roots, quantitative aptitude, polynomials shortcuts, competitive exam preparation",
+      "path": "/learn/quantitative-aptitude/polynomials"
+    },
+    "linear-equations": {
+      "title": "Linear Equations: Practice Sets & Shortcuts for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Linear Equations for SSC CGL, RRB NTPC, Bank PO with comprehensive practice covering single variable and simultaneous equations. Master elimination method, substitution method, and graphical solutions. Practice 400+ questions with competitive exam strategies and quick solving techniques.",
+      "primaryKeyword": "linear equations",
+      "keywords": "linear equations, SSC CGL linear equations, RRB NTPC linear equations, bank PO linear equations, simultaneous equations, elimination method, substitution method, graphical solutions, equation solving, quantitative aptitude, linear equations shortcuts, competitive exam math",
+      "path": "/learn/quantitative-aptitude/linear-equations"
+    },
+    "quadratic-equations": {
+      "title": "Quadratic Equations: Tricks & Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Quadratic Equations for SSC CGL, RRB NTPC, Bank PO with proven shortcuts and formulas. Learn factorization method, quadratic formula, completing square, and discriminant analysis. Practice 350+ questions covering roots properties, sum-product relationships, and competitive exam techniques.",
+      "primaryKeyword": "quadratic equations",
+      "keywords": "quadratic equations, SSC CGL quadratic, RRB NTPC quadratic, bank PO quadratic, factorization method, quadratic formula, completing square, discriminant analysis, roots properties, sum product relationships, quantitative aptitude, quadratic shortcuts, competitive exam preparation",
+      "path": "/learn/quantitative-aptitude/quadratic-equations"
+    },
+    "functions": {
+      "title": "Functions: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Understand Functions concepts for SSC CGL, RRB NTPC, Bank PO with detailed explanations and practice. Learn domain, range, composite functions, inverse functions, and function operations. Practice 250+ questions covering function properties, graphs, and competitive exam applications.",
+      "primaryKeyword": "functions",
+      "keywords": "functions, SSC CGL functions, RRB NTPC functions, bank PO functions, domain range, composite functions, inverse functions, function operations, function properties, function graphs, quantitative aptitude, functions shortcuts, competitive exam math, mathematical functions",
+      "path": "/learn/quantitative-aptitude/functions"
+    },
+    "logarithms": {
+      "title": "Logarithms: Formulas & Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Logarithms for SSC CGL, RRB NTPC, Bank PO with comprehensive theory and practice. Learn logarithmic properties, change of base formula, natural logarithms, and exponential-log relationships. Practice 300+ questions with competitive exam shortcuts and solving techniques.",
+      "primaryKeyword": "logarithms",
+      "keywords": "logarithms, SSC CGL logarithms, RRB NTPC logarithms, bank PO logarithms, logarithmic properties, change of base formula, natural logarithms, exponential log relationships, log calculations, quantitative aptitude, logarithms shortcuts, competitive exam preparation, log formulas",
+      "path": "/learn/quantitative-aptitude/logarithms"
+    },
+    "sequence-and-series-ap-gp-hp": {
+      "title": "Sequence & Series (AP, GP, HP): Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Arithmetic Progression (AP), Geometric Progression (GP), and Harmonic Progression (HP) for SSC CGL, RRB NTPC, Bank PO. Master sequence formulas, sum formulas, and mean calculations. Practice 400+ questions covering progression properties and competitive exam applications.",
+      "primaryKeyword": "sequence and series ap gp hp",
+      "keywords": "sequence series AP GP HP, SSC CGL progression, RRB NTPC sequence, bank PO series, arithmetic progression, geometric progression, harmonic progression, sequence formulas, sum formulas, mean calculations, quantitative aptitude, progression shortcuts, competitive exam math",
+      "path": "/learn/quantitative-aptitude/sequence-and-series-ap-gp-hp"
+    },
+    "lines-and-angles": {
+      "title": "Lines & Angles: Important Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Lines and Angles geometry for SSC CGL, RRB NTPC, Bank PO with comprehensive practice covering parallel lines, transversals, and angle relationships. Learn complementary angles, supplementary angles, and angle bisector concepts. Practice 300+ questions with geometric theorems and competitive exam strategies.",
+      "primaryKeyword": "lines and angles",
+      "keywords": "lines and angles, SSC CGL geometry, RRB NTPC lines angles, bank PO geometry, parallel lines, transversals, angle relationships, complementary angles, supplementary angles, angle bisector, quantitative aptitude, geometry shortcuts, competitive exam preparation",
+      "path": "/learn/quantitative-aptitude/lines-and-angles"
+    },
+    "triangles": {
+      "title": "Triangles: Practice Sets & Shortcuts for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Triangle geometry for SSC CGL, RRB NTPC, Bank PO with detailed practice covering triangle properties, congruence, and similarity. Master Pythagoras theorem, triangle inequality, and area calculations. Practice 400+ questions with geometric shortcuts and competitive exam problem-solving techniques.",
+      "primaryKeyword": "triangles",
+      "keywords": "triangles, SSC CGL triangles, RRB NTPC triangles, bank PO triangles, triangle properties, congruence similarity, Pythagoras theorem, triangle inequality, triangle area, geometric shortcuts, quantitative aptitude, competitive exam geometry, triangle formulas",
+      "path": "/learn/quantitative-aptitude/triangles"
+    },
+    "circles": {
+      "title": "Circles: Key Concepts & Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Circle geometry for SSC CGL, RRB NTPC, Bank PO with comprehensive practice covering circle properties, tangents, and chords. Learn arc length, sector area, and circle theorems. Practice 350+ questions with geometric calculations and competitive exam strategies.",
+      "primaryKeyword": "circles",
+      "keywords": "circles, SSC CGL circles, RRB NTPC circles, bank PO circles, circle properties, tangents chords, arc length, sector area, circle theorems, geometric calculations, quantitative aptitude, circle formulas, competitive exam geometry",
+      "path": "/learn/quantitative-aptitude/circles"
+    },
+    "quadrilaterals": {
+      "title": "Quadrilaterals: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Quadrilateral geometry for SSC CGL, RRB NTPC, Bank PO with detailed practice covering parallelograms, rectangles, squares, and rhombus. Learn quadrilateral properties, area formulas, and diagonal relationships. Practice 300+ questions with geometric shortcuts and competitive exam techniques.",
+      "primaryKeyword": "quadrilaterals",
+      "keywords": "quadrilaterals, SSC CGL quadrilaterals, RRB NTPC quadrilaterals, bank PO quadrilaterals, parallelograms, rectangles squares rhombus, quadrilateral properties, area formulas, diagonal relationships, geometric shortcuts, quantitative aptitude, competitive exam geometry",
+      "path": "/learn/quantitative-aptitude/quadrilaterals"
+    },
+    "polygons": {
+      "title": "Polygons: Formulas & Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Polygon geometry for SSC CGL, RRB NTPC, Bank PO with comprehensive practice covering regular and irregular polygons. Master interior angles, exterior angles, and polygon area calculations. Practice 250+ questions with geometric formulas and competitive exam problem-solving strategies.",
+      "primaryKeyword": "polygons",
+      "keywords": "polygons, SSC CGL polygons, RRB NTPC polygons, bank PO polygons, regular irregular polygons, interior angles, exterior angles, polygon area, geometric formulas, quantitative aptitude, polygon properties, competitive exam geometry, polygon calculations",
+      "path": "/learn/quantitative-aptitude/polygons"
+    },
+    "trigonometry": {
+      "title": "Trigonometry: Practice Sets & Shortcuts for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Trigonometry for SSC CGL, RRB NTPC, Bank PO with comprehensive practice covering trigonometric ratios, identities, and equations. Learn sine, cosine, tangent functions and their applications. Practice 400+ questions with trigonometric shortcuts and competitive exam strategies.",
+      "primaryKeyword": "trigonometry",
+      "keywords": "trigonometry, SSC CGL trigonometry, RRB NTPC trigonometry, bank PO trigonometry, trigonometric ratios, trigonometric identities, sine cosine tangent, trigonometric equations, trigonometric shortcuts, quantitative aptitude, competitive exam math, trigonometry formulas",
+      "path": "/learn/quantitative-aptitude/trigonometry"
+    },
+    "coordinate-geometry": {
+      "title": "Coordinate Geometry: Important Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Coordinate Geometry for SSC CGL, RRB NTPC, Bank PO with comprehensive practice covering distance formula, section formula, and equation of lines. Learn slope concepts, area calculations, and circle equations. Practice 350+ questions with analytical geometry techniques and competitive exam strategies.",
+      "primaryKeyword": "coordinate geometry",
+      "keywords": "coordinate geometry, SSC CGL coordinate geometry, RRB NTPC coordinate geometry, bank PO coordinate geometry, distance formula, section formula, equation of lines, slope concepts, area calculations, circle equations, quantitative aptitude, coordinate geometry shortcuts, competitive exam preparation",
+      "path": "/learn/quantitative-aptitude/coordinate-geometry"
+    },
+    "mensuration-2d": {
+      "title": "Mensuration 2D: Practice Sets & Formulas for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in 2D Mensuration for SSC CGL, RRB NTPC, Bank PO with comprehensive practice covering area and perimeter calculations. Master rectangle, square, triangle, circle, and parallelogram formulas. Practice 450+ questions with geometric calculations and competitive exam shortcuts.",
+      "primaryKeyword": "mensuration 2d",
+      "keywords": "mensuration 2D, SSC CGL mensuration, RRB NTPC mensuration, bank PO mensuration, area perimeter, rectangle square triangle, circle parallelogram, geometric calculations, mensuration formulas, quantitative aptitude, mensuration shortcuts, competitive exam preparation",
+      "path": "/learn/quantitative-aptitude/mensuration-2d"
+    },
+    "mensuration-3d": {
+      "title": "Mensuration 3D: Key Concepts & Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master 3D Mensuration for SSC CGL, RRB NTPC, Bank PO with detailed practice covering volume and surface area calculations. Learn cube, cuboid, cylinder, cone, and sphere formulas. Practice 400+ questions with 3D geometric calculations and competitive exam strategies.",
+      "primaryKeyword": "mensuration 3d",
+      "keywords": "mensuration 3D, SSC CGL 3D mensuration, RRB NTPC 3D mensuration, bank PO 3D mensuration, volume surface area, cube cuboid cylinder, cone sphere, 3D geometric calculations, mensuration formulas, quantitative aptitude, 3D mensuration shortcuts, competitive exam preparation",
+      "path": "/learn/quantitative-aptitude/mensuration-3d"
+    },
+    "set-theory": {
+      "title": "Set Theory: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Set Theory for SSC CGL, RRB NTPC, Bank PO with comprehensive practice covering set operations, Venn diagrams, and set relationships. Learn union, intersection, complement, and cardinality concepts. Practice 300+ questions with logical reasoning and competitive exam applications.",
+      "primaryKeyword": "set theory",
+      "keywords": "set theory, SSC CGL set theory, RRB NTPC set theory, bank PO set theory, set operations, Venn diagrams, union intersection complement, cardinality, set relationships, logical reasoning, quantitative aptitude, set theory shortcuts, competitive exam preparation",
+      "path": "/learn/quantitative-aptitude/set-theory"
+    },
+    "probability": {
+      "title": "Probability: Formulas & Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Probability for SSC CGL, RRB NTPC, Bank PO with comprehensive practice covering basic probability, conditional probability, and Bayes theorem. Master probability distributions, combinations, and statistical applications. Practice 400+ questions with probabilistic reasoning and competitive exam strategies.",
+      "primaryKeyword": "probability",
+      "keywords": "probability, SSC CGL probability, RRB NTPC probability, bank PO probability, conditional probability, Bayes theorem, probability distributions, combinations permutations, probabilistic reasoning, quantitative aptitude, probability shortcuts, competitive exam preparation, statistical probability",
+      "path": "/learn/quantitative-aptitude/probability"
+    },
+    "permutations-and-combinations": {
+      "title": "Permutations & Combinations: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Permutations and Combinations for SSC CGL, RRB NTPC, Bank PO with detailed practice covering arrangement and selection problems. Learn nPr, nCr formulas, circular permutations, and restricted arrangements. Practice 350+ questions with combinatorial reasoning and competitive exam techniques.",
+      "primaryKeyword": "permutations and combinations",
+      "keywords": "permutations combinations, SSC CGL permutations, RRB NTPC combinations, bank PO permutations combinations, nPr nCr formulas, circular permutations, restricted arrangements, combinatorial reasoning, quantitative aptitude, permutations shortcuts, competitive exam preparation, arrangement selection",
+      "path": "/learn/quantitative-aptitude/permutations-and-combinations"
+    },
+    "statistics": {
+      "title": "Statistics: Important Questions & Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Statistics for SSC CGL, RRB NTPC, Bank PO with comprehensive practice covering mean, median, mode, and standard deviation. Learn data analysis, frequency distribution, and statistical measures. Practice 350+ questions with statistical calculations and competitive exam strategies.",
+      "primaryKeyword": "statistics",
+      "keywords": "statistics, SSC CGL statistics, RRB NTPC statistics, bank PO statistics, mean median mode, standard deviation, data analysis, frequency distribution, statistical measures, statistical calculations, quantitative aptitude, statistics shortcuts, competitive exam preparation",
+      "path": "/learn/quantitative-aptitude/statistics"
+    },
+    "speed-distance-time": {
+      "title": "Speed, Distance & Time: Practice Sets & Shortcuts for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Speed, Distance, and Time problems for SSC CGL, RRB NTPC, Bank PO with proven shortcuts and formulas. Master relative speed, average speed, and motion problems. Practice 500+ questions covering trains, boats, and competitive exam problem-solving techniques.",
+      "primaryKeyword": "speed distance time",
+      "keywords": "speed distance time, SSC CGL speed time, RRB NTPC speed distance, bank PO time distance, relative speed, average speed, motion problems, trains boats problems, speed calculations, quantitative aptitude, speed shortcuts, competitive exam preparation",
+      "path": "/learn/quantitative-aptitude/speed-distance-time"
+    },
+    "time-and-work": {
+      "title": "Time & Work: Practice Questions & Shortcuts for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Time and Work problems for SSC CGL, RRB NTPC, Bank PO with comprehensive practice and shortcuts. Learn work efficiency, combined work, and work rate calculations. Practice 450+ questions covering pipes-cisterns, partnership work, and competitive exam strategies.",
+      "primaryKeyword": "time and work",
+      "keywords": "time and work, SSC CGL time work, RRB NTPC time work, bank PO time work, work efficiency, combined work, work rate calculations, pipes cisterns, partnership work, quantitative aptitude, time work shortcuts, competitive exam preparation",
+      "path": "/learn/quantitative-aptitude/time-and-work"
+    },
+    "trains-and-platforms": {
+      "title": "Trains & Platforms: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Trains and Platforms problems for SSC CGL, RRB NTPC, Bank PO with detailed practice and shortcuts. Master train crossing problems, relative speed of trains, and platform calculations. Practice 300+ questions with time-distance concepts and competitive exam techniques.",
+      "primaryKeyword": "trains and platforms",
+      "keywords": "trains and platforms, SSC CGL trains, RRB NTPC trains, bank PO trains platforms, train crossing problems, relative speed trains, platform calculations, time distance concepts, quantitative aptitude, trains shortcuts, competitive exam preparation, railway problems",
+      "path": "/learn/quantitative-aptitude/trains-and-platforms"
+    },
+    "boats-and-streams": {
+      "title": "Boats & Streams: Tricks & Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Boats and Streams problems for SSC CGL, RRB NTPC, Bank PO with proven shortcuts and formulas. Learn upstream-downstream concepts, still water speed, and stream speed calculations. Practice 350+ questions with water current problems and competitive exam strategies.",
+      "primaryKeyword": "boats and streams",
+      "keywords": "boats and streams, SSC CGL boats streams, RRB NTPC boats, bank PO streams, upstream downstream, still water speed, stream speed calculations, water current problems, quantitative aptitude, boats shortcuts, competitive exam preparation, river problems",
+      "path": "/learn/quantitative-aptitude/boats-and-streams"
+    },
+    "pipes-and-cisterns": {
+      "title": "Pipes & Cisterns: Practice Sets & Shortcuts for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Pipes and Cisterns problems for SSC CGL, RRB NTPC, Bank PO with comprehensive practice and time-saving techniques. Master filling-emptying rates, combined pipe work, and tank problems. Practice 400+ questions with work rate concepts and competitive exam strategies.",
+      "primaryKeyword": "pipes and cisterns",
+      "keywords": "pipes and cisterns, SSC CGL pipes cisterns, RRB NTPC pipes, bank PO cisterns, filling emptying rates, combined pipe work, tank problems, work rate concepts, quantitative aptitude, pipes shortcuts, competitive exam preparation, water tank problems",
+      "path": "/learn/quantitative-aptitude/pipes-and-cisterns"
+    },
+    "races-and-games": {
+      "title": "Races & Games: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Races and Games problems for SSC CGL, RRB NTPC, Bank PO with detailed practice covering race concepts, head start, and circular races. Learn time-distance relationships in competitive scenarios. Practice 250+ questions with racing strategies and competitive exam techniques.",
+      "primaryKeyword": "races and games",
+      "keywords": "races and games, SSC CGL races, RRB NTPC races games, bank PO races, race concepts, head start, circular races, time distance relationships, racing strategies, quantitative aptitude, races shortcuts, competitive exam preparation, sports problems",
+      "path": "/learn/quantitative-aptitude/races-and-games"
+    },
+    "ages": {
+      "title": "Ages: Practice Sets & Shortcuts for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Age problems for SSC CGL, RRB NTPC, Bank PO with comprehensive practice and proven shortcuts. Master present age, past age, future age calculations, and age ratios. Practice 300+ questions with algebraic age concepts and competitive exam problem-solving techniques.",
+      "primaryKeyword": "ages",
+      "keywords": "ages problems, SSC CGL ages, RRB NTPC ages, bank PO ages, present age, past age future age, age calculations, age ratios, algebraic age concepts, quantitative aptitude, ages shortcuts, competitive exam preparation, age word problems",
+      "path": "/learn/quantitative-aptitude/ages"
+    },
+    "clock": {
+      "title": "Clock: Important Questions & Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Clock problems for SSC CGL, RRB NTPC, Bank PO with detailed practice covering angle calculations, time concepts, and clock arithmetic. Learn hour-minute hand relationships and time calculations. Practice 250+ questions with clock geometry and competitive exam strategies.",
+      "primaryKeyword": "clock",
+      "keywords": "clock problems, SSC CGL clock, RRB NTPC clock, bank PO clock, angle calculations, time concepts, clock arithmetic, hour minute hand, time calculations, clock geometry, quantitative aptitude, clock shortcuts, competitive exam preparation",
+      "path": "/learn/quantitative-aptitude/clock"
+    },
+    "calendar": {
+      "title": "Calendar: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Calendar problems for SSC CGL, RRB NTPC, Bank PO with comprehensive practice covering day calculations, date problems, and calendar arithmetic. Master leap year concepts, odd days, and day-date relationships. Practice 200+ questions with calendar logic and competitive exam techniques.",
+      "primaryKeyword": "calendar",
+      "keywords": "calendar problems, SSC CGL calendar, RRB NTPC calendar, bank PO calendar, day calculations, date problems, calendar arithmetic, leap year concepts, odd days, day date relationships, quantitative aptitude, calendar shortcuts, competitive exam preparation",
+      "path": "/learn/quantitative-aptitude/calendar"
+    },
+    "verbal-analogy-1": {
+      "title": "Verbal Analogy: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Verbal Analogy for SSC CGL, RRB NTPC, Bank PO with comprehensive practice covering word relationships, analogy patterns, and logical connections. Learn synonym-antonym analogies, cause-effect relationships, and classification methods. Practice 400+ questions with reasoning shortcuts and competitive exam strategies.",
+      "primaryKeyword": "verbal analogy 1",
+      "keywords": "verbal analogy, SSC CGL verbal analogy, RRB NTPC analogy, bank PO verbal reasoning, word relationships, analogy patterns, logical connections, synonym antonym analogies, cause effect relationships, logical reasoning, analogy shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/verbal-analogy-1"
+    },
+    "syllogism": {
+      "title": "Syllogism: Important Questions & Tricks for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Syllogism for SSC CGL, RRB NTPC, Bank PO with proven techniques and shortcuts. Master premise-conclusion relationships, Venn diagram methods, and logical deduction rules. Practice 500+ questions covering all syllogism types with competitive exam strategies and quick solving methods.",
+      "primaryKeyword": "syllogism",
+      "keywords": "syllogism, SSC CGL syllogism, RRB NTPC syllogism, bank PO syllogism, premise conclusion, Venn diagram methods, logical deduction, syllogism rules, syllogism shortcuts, logical reasoning, competitive exam preparation, syllogism tricks",
+      "path": "/learn/logical-reasoning/syllogism"
+    },
+    "blood-relations": {
+      "title": "Blood Relations: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Blood Relations for SSC CGL, RRB NTPC, Bank PO with comprehensive family tree practice. Learn relationship mapping, generation analysis, and family connection techniques. Practice 450+ questions covering complex family relationships with logical reasoning shortcuts and competitive exam strategies.",
+      "primaryKeyword": "blood relations",
+      "keywords": "blood relations, SSC CGL blood relations, RRB NTPC blood relations, bank PO family relations, family tree, relationship mapping, generation analysis, family connections, logical reasoning, blood relations shortcuts, competitive exam preparation, family relationships",
+      "path": "/learn/logical-reasoning/blood-relations"
+    },
+    "direction-sense": {
+      "title": "Direction Sense: Practice Sets & Shortcuts for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Direction Sense for SSC CGL, RRB NTPC, Bank PO with comprehensive practice covering compass directions, distance calculations, and path tracking. Master left-right movements, shadow problems, and directional puzzles. Practice 350+ questions with geometric reasoning and competitive exam techniques.",
+      "primaryKeyword": "direction sense",
+      "keywords": "direction sense, SSC CGL direction sense, RRB NTPC direction, bank PO direction sense, compass directions, distance calculations, path tracking, left right movements, shadow problems, directional puzzles, logical reasoning, direction shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/direction-sense"
+    },
+    "seating-arrangements": {
+      "title": "Seating Arrangements: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Seating Arrangements for SSC CGL, RRB NTPC, Bank PO with detailed practice covering linear, circular, and complex arrangements. Learn position analysis, constraint solving, and arrangement logic. Practice 400+ questions with systematic approaches and competitive exam strategies.",
+      "primaryKeyword": "seating arrangements",
+      "keywords": "seating arrangements, SSC CGL seating, RRB NTPC arrangements, bank PO seating, linear arrangements, circular arrangements, position analysis, constraint solving, arrangement logic, logical reasoning, seating shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/seating-arrangements"
+    },
+    "statement-and-conclusions": {
+      "title": "Statement & Conclusions: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Statement and Conclusions for SSC CGL, RRB NTPC, Bank PO with comprehensive logical analysis practice. Master conclusion derivation, logical inference, and statement evaluation techniques. Practice 350+ questions covering all conclusion types with reasoning shortcuts and competitive exam strategies.",
+      "primaryKeyword": "statement and conclusions",
+      "keywords": "statement and conclusions, SSC CGL statement conclusions, RRB NTPC conclusions, bank PO logical reasoning, conclusion derivation, logical inference, statement evaluation, logical analysis, reasoning shortcuts, competitive exam preparation, statement reasoning",
+      "path": "/learn/logical-reasoning/statement-and-conclusions"
+    },
+    "statement-and-assumptions": {
+      "title": "Statement & Assumptions: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Statement and Assumptions for SSC CGL, RRB NTPC, Bank PO with detailed practice covering assumption identification and logical analysis. Learn implicit assumptions, statement evaluation, and logical reasoning techniques. Practice 300+ questions with systematic approaches and competitive exam strategies.",
+      "primaryKeyword": "statement and assumptions",
+      "keywords": "statement and assumptions, SSC CGL assumptions, RRB NTPC statement assumptions, bank PO logical reasoning, assumption identification, implicit assumptions, statement evaluation, logical analysis, reasoning techniques, competitive exam preparation, logical reasoning shortcuts",
+      "path": "/learn/logical-reasoning/statement-and-assumptions"
+    },
+    "data-sufficiency": {
+      "title": "Data Sufficiency: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Data Sufficiency for SSC CGL, RRB NTPC, Bank PO with comprehensive practice covering information analysis and logical evaluation. Master sufficiency criteria, data analysis, and logical reasoning techniques. Practice 400+ questions with systematic evaluation methods and competitive exam strategies.",
+      "primaryKeyword": "data sufficiency",
+      "keywords": "data sufficiency, SSC CGL data sufficiency, RRB NTPC data analysis, bank PO data sufficiency, information analysis, sufficiency criteria, data evaluation, logical reasoning, data analysis techniques, competitive exam preparation, sufficiency shortcuts",
+      "path": "/learn/logical-reasoning/data-sufficiency"
+    },
+    "series": {
+      "title": "Series: Important Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Number and Letter Series for SSC CGL, RRB NTPC, Bank PO with comprehensive pattern recognition practice. Learn arithmetic series, geometric series, and alphabetical patterns. Practice 450+ questions covering all series types with pattern analysis and competitive exam shortcuts.",
+      "primaryKeyword": "series",
+      "keywords": "series, SSC CGL series, RRB NTPC series, bank PO series, number series, letter series, pattern recognition, arithmetic series, geometric series, alphabetical patterns, logical reasoning, series shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/series"
+    },
+    "non-verbal-analogy": {
+      "title": "Non-Verbal Analogy: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Non-Verbal Analogy for SSC CGL, RRB NTPC, Bank PO with comprehensive visual pattern practice. Master figure relationships, shape analogies, and visual reasoning techniques. Practice 350+ questions covering geometric patterns with analytical reasoning and competitive exam strategies.",
+      "primaryKeyword": "non verbal analogy",
+      "keywords": "non verbal analogy, SSC CGL non verbal, RRB NTPC visual analogy, bank PO figure analogy, visual patterns, figure relationships, shape analogies, visual reasoning, geometric patterns, analytical reasoning, logical reasoning, competitive exam preparation",
+      "path": "/learn/logical-reasoning/non-verbal-analogy"
+    },
+    "classification": {
+      "title": "Classification: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Classification for SSC CGL, RRB NTPC, Bank PO with detailed practice covering odd-one-out and grouping techniques. Learn category identification, pattern recognition, and logical grouping methods. Practice 300+ questions with systematic classification approaches and competitive exam strategies.",
+      "primaryKeyword": "classification",
+      "keywords": "classification, SSC CGL classification, RRB NTPC classification, bank PO classification, odd one out, grouping techniques, category identification, pattern recognition, logical grouping, logical reasoning, classification shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/classification"
+    },
+    "pattern-recognition": {
+      "title": "Pattern Recognition: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Pattern Recognition for SSC CGL, RRB NTPC, Bank PO with comprehensive visual and logical pattern practice. Master sequence patterns, geometric progressions, and design recognition. Practice 400+ questions covering all pattern types with analytical techniques and competitive exam strategies.",
+      "primaryKeyword": "pattern recognition",
+      "keywords": "pattern recognition, SSC CGL patterns, RRB NTPC pattern recognition, bank PO patterns, sequence patterns, geometric progressions, design recognition, visual patterns, analytical techniques, logical reasoning, pattern shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/pattern-recognition"
+    },
+    "figure-series": {
+      "title": "Figure Series: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Figure Series for SSC CGL, RRB NTPC, Bank PO with detailed visual sequence practice. Learn progressive patterns, rotational changes, and figure transformations. Practice 350+ questions covering geometric sequences with visual reasoning and competitive exam techniques.",
+      "primaryKeyword": "figure series",
+      "keywords": "figure series, SSC CGL figure series, RRB NTPC figure sequence, bank PO visual series, progressive patterns, rotational changes, figure transformations, geometric sequences, visual reasoning, logical reasoning, figure shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/figure-series"
+    },
+    "mirror-images": {
+      "title": "Mirror Images: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Mirror Images for SSC CGL, RRB NTPC, Bank PO with comprehensive reflection practice. Master horizontal mirroring, vertical mirroring, and spatial visualization techniques. Practice 250+ questions covering all mirror types with visual reasoning and competitive exam strategies.",
+      "primaryKeyword": "mirror images",
+      "keywords": "mirror images, SSC CGL mirror images, RRB NTPC mirror, bank PO reflection, horizontal mirroring, vertical mirroring, spatial visualization, reflection patterns, visual reasoning, logical reasoning, mirror shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/mirror-images"
+    },
+    "water-images": {
+      "title": "Water Images: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Water Images for SSC CGL, RRB NTPC, Bank PO with detailed reflection practice covering water surface reflections. Learn vertical reflection patterns, image orientation, and spatial reasoning techniques. Practice 250+ questions with visual analysis and competitive exam strategies.",
+      "primaryKeyword": "water images",
+      "keywords": "water images, SSC CGL water images, RRB NTPC water reflection, bank PO water images, vertical reflection, image orientation, spatial reasoning, reflection patterns, visual analysis, logical reasoning, water image shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/water-images"
+    },
+    "paper-folding": {
+      "title": "Paper Folding: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Paper Folding for SSC CGL, RRB NTPC, Bank PO with comprehensive spatial visualization practice. Master folding patterns, hole punching, and unfolding techniques. Practice 300+ questions covering complex folding scenarios with visual reasoning and competitive exam strategies.",
+      "primaryKeyword": "paper folding",
+      "keywords": "paper folding, SSC CGL paper folding, RRB NTPC folding, bank PO paper folding, spatial visualization, folding patterns, hole punching, unfolding techniques, visual reasoning, logical reasoning, folding shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/paper-folding"
+    },
+    "paper-cutting": {
+      "title": "Paper Cutting: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Paper Cutting for SSC CGL, RRB NTPC, Bank PO with detailed cutting pattern practice. Learn cut analysis, unfolding results, and spatial visualization techniques. Practice 250+ questions covering various cutting scenarios with visual reasoning and competitive exam strategies.",
+      "primaryKeyword": "paper cutting",
+      "keywords": "paper cutting, SSC CGL paper cutting, RRB NTPC cutting, bank PO paper cutting, cutting patterns, cut analysis, unfolding results, spatial visualization, visual reasoning, logical reasoning, cutting shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/paper-cutting"
+    },
+    "cubes-and-dices-visualisation": {
+      "title": "Cubes & Dices Visualisation: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Cubes and Dices Visualization for SSC CGL, RRB NTPC, Bank PO with comprehensive 3D reasoning practice. Master cube rotations, dice patterns, and spatial relationships. Practice 350+ questions covering cube analysis with visual reasoning and competitive exam techniques.",
+      "primaryKeyword": "cubes and dices visualisation",
+      "keywords": "cubes and dices, SSC CGL cubes dices, RRB NTPC cube visualization, bank PO dices, 3D reasoning, cube rotations, dice patterns, spatial relationships, cube analysis, visual reasoning, logical reasoning, cube shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/cubes-and-dices-visualisation"
+    },
+    "embedded-figures": {
+      "title": "Embedded Figures: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Embedded Figures for SSC CGL, RRB NTPC, Bank PO with detailed hidden figure practice. Learn figure identification, pattern detection, and visual analysis techniques. Practice 300+ questions covering complex embedded patterns with analytical reasoning and competitive exam strategies.",
+      "primaryKeyword": "embedded figures",
+      "keywords": "embedded figures, SSC CGL embedded figures, RRB NTPC hidden figures, bank PO embedded patterns, figure identification, pattern detection, visual analysis, hidden patterns, analytical reasoning, logical reasoning, embedded shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/embedded-figures"
+    },
+    "3d-visualisation": {
+      "title": "3D Visualisation: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in 3D Visualization for SSC CGL, RRB NTPC, Bank PO with comprehensive spatial reasoning practice. Master 3D rotations, perspective views, and dimensional analysis. Practice 300+ questions covering complex 3D scenarios with spatial intelligence and competitive exam strategies.",
+      "primaryKeyword": "3d visualisation",
+      "keywords": "3D visualization, SSC CGL 3D visualization, RRB NTPC 3D reasoning, bank PO spatial reasoning, 3D rotations, perspective views, dimensional analysis, spatial intelligence, 3D reasoning, logical reasoning, 3D shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/3d-visualisation"
+    },
+    "dices": {
+      "title": "Dices: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Dice problems for SSC CGL, RRB NTPC, Bank PO with detailed practice covering dice rotations and face relationships. Learn opposite faces, adjacent faces, and dice construction rules. Practice 250+ questions with spatial reasoning and competitive exam techniques.",
+      "primaryKeyword": "dices",
+      "keywords": "dices, SSC CGL dices, RRB NTPC dice problems, bank PO dices, dice rotations, face relationships, opposite faces, adjacent faces, dice construction, spatial reasoning, logical reasoning, dice shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/dices"
+    },
+    "puzzles": {
+      "title": "Puzzles: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Logical Puzzles for SSC CGL, RRB NTPC, Bank PO with comprehensive problem-solving practice. Master arrangement puzzles, scheduling problems, and logical deduction techniques. Practice 400+ questions covering various puzzle types with analytical reasoning and competitive exam strategies.",
+      "primaryKeyword": "puzzles",
+      "keywords": "logical puzzles, SSC CGL puzzles, RRB NTPC logical puzzles, bank PO puzzles, arrangement puzzles, scheduling problems, logical deduction, problem solving, analytical reasoning, logical reasoning, puzzle shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/puzzles"
+    },
+    "odd-one-out": {
+      "title": "Odd One Out: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Odd One Out for SSC CGL, RRB NTPC, Bank PO with detailed classification practice. Learn difference identification, pattern analysis, and logical grouping techniques. Practice 300+ questions covering numerical, alphabetical, and figure-based odd-one-out with competitive exam strategies.",
+      "primaryKeyword": "odd one out",
+      "keywords": "odd one out, SSC CGL odd one out, RRB NTPC classification, bank PO odd one out, difference identification, pattern analysis, logical grouping, classification techniques, logical reasoning, odd one out shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/odd-one-out"
+    },
+    "input-output": {
+      "title": "Input Output: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Input Output for SSC CGL, RRB NTPC, Bank PO with comprehensive machine operation practice. Master step-wise processing, pattern recognition, and logical sequence analysis. Practice 350+ questions covering various input-output patterns with systematic approaches and competitive exam strategies.",
+      "primaryKeyword": "input output",
+      "keywords": "input output, SSC CGL input output, RRB NTPC machine input, bank PO input output, step wise processing, pattern recognition, logical sequence, machine operations, systematic approaches, logical reasoning, input output shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/input-output"
+    },
+    "coding-decoding": {
+      "title": "Coding Decoding: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Coding Decoding for SSC CGL, RRB NTPC, Bank PO with detailed cipher practice covering letter coding, number coding, and symbol substitution. Learn coding patterns, decoding techniques, and logical encryption methods. Practice 400+ questions with systematic decoding approaches and competitive exam strategies.",
+      "primaryKeyword": "coding decoding",
+      "keywords": "coding decoding, SSC CGL coding decoding, RRB NTPC coding, bank PO decoding, letter coding, number coding, symbol substitution, coding patterns, decoding techniques, logical encryption, logical reasoning, coding shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/coding-decoding"
+    },
+    "clocks-and-calendars": {
+      "title": "Clocks & Calendars: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Clocks and Calendars for SSC CGL, RRB NTPC, Bank PO with comprehensive time calculation practice. Master clock angles, calendar problems, and date-day relationships. Practice 300+ questions covering time concepts with logical reasoning and competitive exam strategies.",
+      "primaryKeyword": "clocks and calendars",
+      "keywords": "clocks and calendars, SSC CGL clocks calendars, RRB NTPC time problems, bank PO calendar, clock angles, calendar problems, date day relationships, time calculations, logical reasoning, clocks shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/clocks-and-calendars"
+    },
+    "cause-and-effect": {
+      "title": "Cause & Effect: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Cause and Effect for SSC CGL, RRB NTPC, Bank PO with detailed logical relationship practice. Learn causal analysis, effect identification, and logical connection techniques. Practice 250+ questions covering cause-effect scenarios with analytical reasoning and competitive exam strategies.",
+      "primaryKeyword": "cause and effect",
+      "keywords": "cause and effect, SSC CGL cause effect, RRB NTPC causal reasoning, bank PO cause effect, causal analysis, effect identification, logical connections, causal relationships, analytical reasoning, logical reasoning, cause effect shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/cause-and-effect"
+    },
+    "order-and-ranking": {
+      "title": "Order & Ranking: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Order and Ranking for SSC CGL, RRB NTPC, Bank PO with comprehensive position analysis practice. Master ranking problems, position calculations, and sequential arrangements. Practice 350+ questions covering various ranking scenarios with logical analysis and competitive exam strategies.",
+      "primaryKeyword": "order and ranking",
+      "keywords": "order and ranking, SSC CGL order ranking, RRB NTPC position ranking, bank PO ranking, ranking problems, position calculations, sequential arrangements, position analysis, logical analysis, logical reasoning, ranking shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/order-and-ranking"
+    },
+    "logical-deduction": {
+      "title": "Logical Deduction: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Logical Deduction for SSC CGL, RRB NTPC, Bank PO with detailed reasoning practice covering inference techniques and logical analysis. Learn deductive reasoning, premise evaluation, and conclusion derivation methods. Practice 300+ questions with systematic logical approaches and competitive exam strategies.",
+      "primaryKeyword": "logical deduction",
+      "keywords": "logical deduction, SSC CGL logical deduction, RRB NTPC deductive reasoning, bank PO logical analysis, inference techniques, deductive reasoning, premise evaluation, conclusion derivation, logical analysis, logical reasoning, deduction shortcuts, competitive exam preparation",
+      "path": "/learn/logical-reasoning/logical-deduction"
+    },
+    "factual-passages": {
+      "title": "Factual Passages: RC Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Factual Passages for SSC CGL, RRB NTPC, Bank PO with comprehensive reading comprehension practice. Learn fact identification, information extraction, and objective analysis techniques. Practice 300+ passages covering science, history, geography with detailed explanations and competitive exam strategies.",
+      "primaryKeyword": "factual passages",
+      "keywords": "factual passages, SSC CGL reading comprehension, RRB NTPC RC, bank PO reading, fact identification, information extraction, objective analysis, science passages, history passages, geography passages, reading comprehension, RC shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/factual-passages"
+    },
+    "narrative-passages": {
+      "title": "Narrative Passages: RC Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Narrative Passages for SSC CGL, RRB NTPC, Bank PO with comprehensive story analysis practice. Master plot understanding, character analysis, and sequence identification. Practice 250+ narrative texts covering fiction, biographies with detailed comprehension techniques and competitive exam strategies.",
+      "primaryKeyword": "narrative passages",
+      "keywords": "narrative passages, SSC CGL narrative RC, RRB NTPC story passages, bank PO narrative, story analysis, plot understanding, character analysis, sequence identification, fiction passages, biographies, reading comprehension, narrative shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/narrative-passages"
+    },
+    "persuasive-passages": {
+      "title": "Persuasive Passages: RC Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Persuasive Passages for SSC CGL, RRB NTPC, Bank PO with detailed argument analysis practice. Learn persuasion techniques, bias identification, and opinion evaluation methods. Practice 200+ persuasive texts covering editorials, advertisements with analytical reading and competitive exam strategies.",
+      "primaryKeyword": "persuasive passages",
+      "keywords": "persuasive passages, SSC CGL persuasive RC, RRB NTPC argument analysis, bank PO persuasive, argument analysis, persuasion techniques, bias identification, opinion evaluation, editorials, advertisements, reading comprehension, persuasive shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/persuasive-passages"
+    },
+    "argumentative-passages": {
+      "title": "Argumentative Passages: RC Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Argumentative Passages for SSC CGL, RRB NTPC, Bank PO with comprehensive logical analysis practice. Master argument structure, evidence evaluation, and counter-argument identification. Practice 250+ argumentative texts with critical reasoning and competitive exam techniques.",
+      "primaryKeyword": "argumentative passages",
+      "keywords": "argumentative passages, SSC CGL argumentative RC, RRB NTPC argument passages, bank PO argumentative, argument structure, evidence evaluation, counter argument identification, logical analysis, critical reasoning, reading comprehension, argument shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/argumentative-passages"
+    },
+    "informative-passages": {
+      "title": "Informative Passages: RC Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Informative Passages for SSC CGL, RRB NTPC, Bank PO with detailed factual comprehension practice. Learn data interpretation, information synthesis, and knowledge extraction techniques. Practice 300+ informative texts covering technology, economics with analytical reading and competitive exam strategies.",
+      "primaryKeyword": "informative passages",
+      "keywords": "informative passages, SSC CGL informative RC, RRB NTPC information passages, bank PO informative, data interpretation, information synthesis, knowledge extraction, technology passages, economics passages, analytical reading, reading comprehension, informative shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/informative-passages"
+    },
+    "descriptive-passages": {
+      "title": "Descriptive Passages: RC Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Descriptive Passages for SSC CGL, RRB NTPC, Bank PO with comprehensive visualization practice. Master imagery analysis, sensory details, and descriptive techniques identification. Practice 250+ descriptive texts covering nature, places with visual comprehension and competitive exam strategies.",
+      "primaryKeyword": "descriptive passages",
+      "keywords": "descriptive passages, SSC CGL descriptive RC, RRB NTPC descriptive, bank PO descriptive passages, imagery analysis, sensory details, descriptive techniques, visualization practice, nature passages, places description, reading comprehension, descriptive shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/descriptive-passages"
+    },
+    "critical-passages": {
+      "title": "Critical Passages: RC Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Critical Passages for SSC CGL, RRB NTPC, Bank PO with detailed analytical reading practice. Learn critical analysis, assumption identification, and logical evaluation techniques. Practice 200+ critical texts covering complex topics with advanced reasoning and competitive exam strategies.",
+      "primaryKeyword": "critical passages",
+      "keywords": "critical passages, SSC CGL critical RC, RRB NTPC critical analysis, bank PO critical reading, critical analysis, assumption identification, logical evaluation, analytical reading, advanced reasoning, complex topics, reading comprehension, critical shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/critical-passages"
+    },
+    "othersmixed-type-passages": {
+      "title": "Other/Mixed Type Passages: RC Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Mixed Type Passages for SSC CGL, RRB NTPC, Bank PO with comprehensive varied format practice. Master multi-format analysis, hybrid comprehension, and adaptive reading techniques. Practice 300+ mixed passages covering diverse topics with flexible strategies and competitive exam preparation.",
+      "primaryKeyword": "othersmixed type passages",
+      "keywords": "mixed type passages, SSC CGL mixed RC, RRB NTPC varied passages, bank PO mixed format, multi format analysis, hybrid comprehension, adaptive reading, diverse topics, flexible strategies, reading comprehension, mixed shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/othersmixed-type-passages"
+    },
+    "science-and-technology": {
+      "title": "Science & Technology Passages: RC Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Science and Technology Passages for SSC CGL, RRB NTPC, Bank PO with specialized technical comprehension practice. Learn scientific concept analysis, technology trends, and innovation understanding. Practice 250+ science-tech passages with technical vocabulary and competitive exam strategies.",
+      "primaryKeyword": "science and technology",
+      "keywords": "science and technology passages, SSC CGL science RC, RRB NTPC technology passages, bank PO science tech, scientific concept analysis, technology trends, innovation understanding, technical comprehension, scientific vocabulary, reading comprehension, science shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/science-and-technology"
+    },
+    "business-and-economics": {
+      "title": "Business & Economics Passages: RC Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Business and Economics Passages for SSC CGL, RRB NTPC, Bank PO with comprehensive financial comprehension practice. Master economic concept analysis, business strategy understanding, and market trend interpretation. Practice 250+ business-economics passages with commercial vocabulary and competitive exam strategies.",
+      "primaryKeyword": "business and economics",
+      "keywords": "business and economics passages, SSC CGL business RC, RRB NTPC economics passages, bank PO business economics, economic concept analysis, business strategy, market trend interpretation, financial comprehension, commercial vocabulary, reading comprehension, business shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/business-and-economics"
+    },
+    "philosophy-and-ethics": {
+      "title": "Philosophy & Ethics Passages: RC Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Philosophy and Ethics Passages for SSC CGL, RRB NTPC, Bank PO with detailed philosophical comprehension practice. Learn ethical analysis, moral reasoning, and philosophical concept understanding. Practice 200+ philosophy-ethics passages with abstract thinking and competitive exam strategies.",
+      "primaryKeyword": "philosophy and ethics",
+      "keywords": "philosophy and ethics passages, SSC CGL philosophy RC, RRB NTPC ethics passages, bank PO philosophy ethics, ethical analysis, moral reasoning, philosophical concepts, abstract thinking, philosophical vocabulary, reading comprehension, philosophy shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/philosophy-and-ethics"
+    },
+    "literature-and-arts": {
+      "title": "Literature & Arts Passages: RC Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Literature and Arts Passages for SSC CGL, RRB NTPC, Bank PO with comprehensive cultural comprehension practice. Master literary analysis, artistic interpretation, and cultural understanding techniques. Practice 250+ literature-arts passages with creative vocabulary and competitive exam strategies.",
+      "primaryKeyword": "literature and arts",
+      "keywords": "literature and arts passages, SSC CGL literature RC, RRB NTPC arts passages, bank PO literature arts, literary analysis, artistic interpretation, cultural understanding, creative vocabulary, cultural comprehension, reading comprehension, literature shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/literature-and-arts"
+    },
+    "history-and-politics": {
+      "title": "History & Politics Passages: RC Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master History and Politics Passages for SSC CGL, RRB NTPC, Bank PO with detailed historical-political comprehension practice. Learn historical analysis, political understanding, and chronological reasoning. Practice 250+ history-politics passages with contextual knowledge and competitive exam strategies.",
+      "primaryKeyword": "history and politics",
+      "keywords": "history and politics passages, SSC CGL history RC, RRB NTPC politics passages, bank PO history politics, historical analysis, political understanding, chronological reasoning, contextual knowledge, political vocabulary, reading comprehension, history shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/history-and-politics"
+    },
+    "social-sciences": {
+      "title": "Social Sciences Passages: RC Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Social Sciences Passages for SSC CGL, RRB NTPC, Bank PO with comprehensive sociological comprehension practice. Master social concept analysis, behavioral understanding, and societal trend interpretation. Practice 250+ social sciences passages with analytical thinking and competitive exam strategies.",
+      "primaryKeyword": "social sciences",
+      "keywords": "social sciences passages, SSC CGL social sciences RC, RRB NTPC sociology passages, bank PO social sciences, social concept analysis, behavioral understanding, societal trends, sociological comprehension, social vocabulary, reading comprehension, social shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/social-sciences"
+    },
+    "othersmixed-genres": {
+      "title": "Other/Mixed Genres: RC Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Mixed Genres Passages for SSC CGL, RRB NTPC, Bank PO with comprehensive multi-genre comprehension practice. Learn genre identification, style analysis, and adaptive reading techniques. Practice 300+ mixed genre passages covering various writing styles with flexible strategies and competitive exam preparation.",
+      "primaryKeyword": "othersmixed genres",
+      "keywords": "mixed genres passages, SSC CGL mixed genres RC, RRB NTPC varied genres, bank PO mixed styles, genre identification, style analysis, adaptive reading, multi genre comprehension, writing styles, flexible strategies, reading comprehension, genre shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/othersmixed-genres"
+    },
+    "main-ideatheme-questions": {
+      "title": "Main Idea/Theme: RC Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Main Idea and Theme questions for SSC CGL, RRB NTPC, Bank PO with comprehensive central concept identification practice. Master theme extraction, main idea recognition, and central message analysis. Practice 400+ questions with systematic approaches and competitive exam strategies.",
+      "primaryKeyword": "main ideatheme questions",
+      "keywords": "main idea theme questions, SSC CGL main idea, RRB NTPC theme questions, bank PO central idea, theme extraction, main idea recognition, central message analysis, central concept identification, reading comprehension, main idea shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/main-ideatheme-questions"
+    },
+    "supporting-details": {
+      "title": "Supporting Details: RC Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Supporting Details questions for SSC CGL, RRB NTPC, Bank PO with detailed evidence identification practice. Learn detail extraction, supporting evidence analysis, and factual information recognition. Practice 350+ questions with systematic detail finding and competitive exam techniques.",
+      "primaryKeyword": "supporting details",
+      "keywords": "supporting details, SSC CGL supporting details, RRB NTPC detail questions, bank PO evidence questions, detail extraction, supporting evidence, factual information, evidence identification, detail finding, reading comprehension, details shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/supporting-details"
+    },
+    "inference-based-questions": {
+      "title": "Inference Based Questions: RC Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Inference Based Questions for SSC CGL, RRB NTPC, Bank PO with comprehensive logical deduction practice. Master implicit meaning extraction, logical inference, and hidden message identification. Practice 400+ inference questions with analytical reasoning and competitive exam strategies.",
+      "primaryKeyword": "inference based questions",
+      "keywords": "inference based questions, SSC CGL inference, RRB NTPC logical inference, bank PO inference questions, implicit meaning, logical deduction, hidden messages, inference techniques, analytical reasoning, reading comprehension, inference shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/inference-based-questions"
+    },
+    "vocabulory-in-context": {
+      "title": "Vocabulary in Context: RC Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Vocabulary in Context for SSC CGL, RRB NTPC, Bank PO with detailed word meaning practice. Learn contextual word analysis, meaning derivation, and vocabulary inference techniques. Practice 350+ vocabulary questions with context clues and competitive exam strategies.",
+      "primaryKeyword": "vocabulory in context",
+      "keywords": "vocabulary in context, SSC CGL vocabulary, RRB NTPC word meaning, bank PO contextual vocabulary, contextual word analysis, meaning derivation, vocabulary inference, context clues, word meanings, reading comprehension, vocabulary shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/vocabulory-in-context"
+    },
+    "authors-purpose-and-tone": {
+      "title": "Author's Purpose & Tone: RC Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Author's Purpose and Tone for SSC CGL, RRB NTPC, Bank PO with comprehensive intent analysis practice. Master purpose identification, tone recognition, and attitude evaluation techniques. Practice 300+ questions covering authorial intent with analytical skills and competitive exam strategies.",
+      "primaryKeyword": "authors purpose and tone",
+      "keywords": "authors purpose and tone, SSC CGL author purpose, RRB NTPC tone questions, bank PO authorial intent, purpose identification, tone recognition, attitude evaluation, intent analysis, authorial attitude, reading comprehension, purpose shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/authors-purpose-and-tone"
+    },
+    "critical-reasoning": {
+      "title": "Critical Reasoning: RC Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Critical Reasoning for SSC CGL, RRB NTPC, Bank PO with detailed logical evaluation practice. Learn argument analysis, assumption identification, and logical flaw detection. Practice 350+ critical reasoning questions with advanced analytical techniques and competitive exam strategies.",
+      "primaryKeyword": "critical reasoning",
+      "keywords": "critical reasoning, SSC CGL critical reasoning, RRB NTPC logical analysis, bank PO critical thinking, argument analysis, assumption identification, logical flaw detection, logical evaluation, advanced analysis, reading comprehension, critical shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/critical-reasoning"
+    },
+    "fact-vs-opinion": {
+      "title": "Fact vs Opinion: RC Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Fact vs Opinion for SSC CGL, RRB NTPC, Bank PO with comprehensive distinction practice. Master objective-subjective differentiation, bias identification, and statement classification. Practice 250+ questions with analytical discrimination and competitive exam techniques.",
+      "primaryKeyword": "fact vs opinion",
+      "keywords": "fact vs opinion, SSC CGL fact opinion, RRB NTPC objective subjective, bank PO fact opinion, objective subjective differentiation, bias identification, statement classification, analytical discrimination, reading comprehension, fact opinion shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/fact-vs-opinion"
+    },
+    "paragraphline-reference": {
+      "title": "Paragraph/Line Reference: RC Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Paragraph and Line Reference for SSC CGL, RRB NTPC, Bank PO with detailed text navigation practice. Learn reference identification, specific line analysis, and paragraph connection techniques. Practice 300+ reference questions with systematic text analysis and competitive exam strategies.",
+      "primaryKeyword": "paragraphline reference",
+      "keywords": "paragraph line reference, SSC CGL reference questions, RRB NTPC text reference, bank PO line reference, reference identification, specific line analysis, paragraph connections, text navigation, reference techniques, reading comprehension, reference shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/paragraphline-reference"
+    },
+    "short-passages": {
+      "title": "Short Passages: RC Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Short Passages for SSC CGL, RRB NTPC, Bank PO with comprehensive quick comprehension practice. Master rapid reading, concise analysis, and efficient understanding techniques. Practice 400+ short passages with time management and competitive exam strategies.",
+      "primaryKeyword": "short passages",
+      "keywords": "short passages, SSC CGL short RC, RRB NTPC brief passages, bank PO short comprehension, rapid reading, quick comprehension, concise analysis, efficient understanding, time management, reading comprehension, short passage shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/short-passages"
+    },
+    "medium-passages": {
+      "title": "Medium Passages: RC Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Medium Passages for SSC CGL, RRB NTPC, Bank PO with detailed moderate-length comprehension practice. Learn balanced reading, structured analysis, and comprehensive understanding techniques. Practice 300+ medium passages with strategic approaches and competitive exam preparation.",
+      "primaryKeyword": "medium passages",
+      "keywords": "medium passages, SSC CGL medium RC, RRB NTPC moderate passages, bank PO medium comprehension, balanced reading, structured analysis, comprehensive understanding, moderate length passages, strategic approaches, reading comprehension, medium shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/medium-passages"
+    },
+    "long-passages": {
+      "title": "Long Passages: RC Practice for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Long Passages for SSC CGL, RRB NTPC, Bank PO with comprehensive extended comprehension practice. Master sustained reading, complex analysis, and detailed understanding techniques. Practice 200+ long passages with endurance strategies and competitive exam preparation.",
+      "primaryKeyword": "long passages",
+      "keywords": "long passages, SSC CGL long RC, RRB NTPC extended passages, bank PO long comprehension, sustained reading, complex analysis, detailed understanding, extended comprehension, endurance strategies, reading comprehension, long passage shortcuts, competitive exam preparation",
+      "path": "/learn/reading-comprehension/long-passages"
+    },
+    "synonyms": {
+      "title": "Synonyms: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Synonyms for SSC CGL, RRB NTPC, Bank PO with comprehensive vocabulary building practice. Learn word relationships, contextual meanings, and synonym identification techniques. Practice 500+ synonym questions covering advanced vocabulary with meaning explanations and competitive exam strategies.",
+      "primaryKeyword": "synonyms",
+      "keywords": "synonyms, SSC CGL synonyms, RRB NTPC vocabulary, bank PO synonyms, word relationships, contextual meanings, synonym identification, vocabulary building, advanced vocabulary, word meanings, verbal ability, synonyms shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/synonyms"
+    },
+    "antonyms": {
+      "title": "Antonyms: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Antonyms for SSC CGL, RRB NTPC, Bank PO with detailed opposite word practice. Master antonym identification, word contrasts, and vocabulary expansion techniques. Practice 450+ antonym questions covering diverse word categories with systematic approaches and competitive exam strategies.",
+      "primaryKeyword": "antonyms",
+      "keywords": "antonyms, SSC CGL antonyms, RRB NTPC opposite words, bank PO antonyms, antonym identification, word contrasts, vocabulary expansion, opposite meanings, word opposites, verbal ability, antonyms shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/antonyms"
+    },
+    "word-meaning": {
+      "title": "Word Meaning: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Word Meaning for SSC CGL, RRB NTPC, Bank PO with comprehensive vocabulary comprehension practice. Learn definition identification, contextual understanding, and meaning derivation techniques. Practice 400+ word meaning questions with etymology and competitive exam strategies.",
+      "primaryKeyword": "word meaning",
+      "keywords": "word meaning, SSC CGL word meaning, RRB NTPC vocabulary, bank PO word definitions, definition identification, contextual understanding, meaning derivation, vocabulary comprehension, word definitions, verbal ability, word meaning shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/word-meaning"
+    },
+    "idioms-and-phrases": {
+      "title": "Idioms & Phrases: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Idioms and Phrases for SSC CGL, RRB NTPC, Bank PO with comprehensive idiomatic expression practice. Master phrase meanings, cultural expressions, and figurative language understanding. Practice 500+ idioms and phrases with contextual usage and competitive exam strategies.",
+      "primaryKeyword": "idioms and phrases",
+      "keywords": "idioms and phrases, SSC CGL idioms, RRB NTPC phrases, bank PO idioms phrases, idiomatic expressions, phrase meanings, cultural expressions, figurative language, contextual usage, verbal ability, idioms shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/idioms-and-phrases"
+    },
+    "spellings": {
+      "title": "Spellings: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Spellings for SSC CGL, RRB NTPC, Bank PO with detailed orthographic practice. Learn correct spelling identification, common error patterns, and spelling rules. Practice 350+ spelling questions covering frequently misspelled words with memory techniques and competitive exam strategies.",
+      "primaryKeyword": "spellings",
+      "keywords": "spellings, SSC CGL spellings, RRB NTPC correct spelling, bank PO spelling errors, correct spelling identification, spelling rules, orthographic practice, spelling patterns, misspelled words, verbal ability, spelling shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/spellings"
+    },
+    "analogies": {
+      "title": "Analogies: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Verbal Analogies for SSC CGL, RRB NTPC, Bank PO with comprehensive relationship analysis practice. Master word relationships, logical connections, and analogy patterns. Practice 400+ verbal analogies covering various relationship types with systematic approaches and competitive exam strategies.",
+      "primaryKeyword": "analogies",
+      "keywords": "verbal analogies, SSC CGL analogies, RRB NTPC word analogies, bank PO verbal analogies, word relationships, logical connections, analogy patterns, relationship analysis, word associations, verbal ability, analogies shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/analogies"
+    },
+    "parts-of-speech": {
+      "title": "Parts of Speech: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Parts of Speech for SSC CGL, RRB NTPC, Bank PO with detailed grammatical classification practice. Learn noun, verb, adjective, adverb identification and usage rules. Practice 350+ questions covering all speech parts with grammatical analysis and competitive exam strategies.",
+      "primaryKeyword": "parts of speech",
+      "keywords": "parts of speech, SSC CGL grammar, RRB NTPC parts of speech, bank PO grammar, noun verb adjective, grammatical classification, speech parts identification, grammar rules, grammatical analysis, verbal ability, grammar shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/parts-of-speech"
+    },
+    "tenses": {
+      "title": "Tenses: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Tenses for SSC CGL, RRB NTPC, Bank PO with comprehensive temporal grammar practice. Master past, present, future tenses and their perfect, continuous forms. Practice 450+ tense questions covering all time expressions with usage rules and competitive exam strategies.",
+      "primaryKeyword": "tenses",
+      "keywords": "tenses, SSC CGL tenses, RRB NTPC grammar tenses, bank PO verb tenses, past present future tenses, perfect continuous tenses, temporal grammar, verb forms, time expressions, verbal ability, tenses shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/tenses"
+    },
+    "subject-verb-agreement": {
+      "title": "Subject-Verb Agreement: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Subject-Verb Agreement for SSC CGL, RRB NTPC, Bank PO with detailed grammatical concord practice. Learn agreement rules, singular-plural matching, and complex sentence structures. Practice 350+ agreement questions with systematic error identification and competitive exam strategies.",
+      "primaryKeyword": "subject verb agreement",
+      "keywords": "subject verb agreement, SSC CGL grammar agreement, RRB NTPC subject verb, bank PO agreement rules, grammatical concord, singular plural matching, agreement rules, sentence structures, error identification, verbal ability, agreement shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/subject-verb-agreement"
+    },
+    "articles": {
+      "title": "Articles: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Articles for SSC CGL, RRB NTPC, Bank PO with comprehensive determiner usage practice. Master definite, indefinite article rules and their contextual applications. Practice 300+ article questions covering all usage scenarios with grammatical precision and competitive exam strategies.",
+      "primaryKeyword": "articles",
+      "keywords": "articles, SSC CGL articles grammar, RRB NTPC determiners, bank PO articles, definite indefinite articles, article rules, determiner usage, contextual applications, grammatical precision, verbal ability, articles shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/articles"
+    },
+    "prepositions": {
+      "title": "Prepositions: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Prepositions for SSC CGL, RRB NTPC, Bank PO with detailed positional and relational word practice. Learn preposition usage, phrasal combinations, and contextual applications. Practice 400+ preposition questions covering all types with systematic approaches and competitive exam strategies.",
+      "primaryKeyword": "prepositions",
+      "keywords": "prepositions, SSC CGL prepositions, RRB NTPC preposition usage, bank PO prepositions, positional words, relational words, preposition rules, phrasal combinations, contextual applications, verbal ability, preposition shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/prepositions"
+    },
+    "active-passive-voice": {
+      "title": "Active & Passive Voice: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Active and Passive Voice for SSC CGL, RRB NTPC, Bank PO with comprehensive voice transformation practice. Master voice conversion rules, tense changes, and structural modifications. Practice 400+ voice questions with systematic conversion techniques and competitive exam strategies.",
+      "primaryKeyword": "active passive voice",
+      "keywords": "active passive voice, SSC CGL voice conversion, RRB NTPC active passive, bank PO voice grammar, voice transformation, voice conversion rules, tense changes, structural modifications, grammar conversion, verbal ability, voice shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/active-passive-voice"
+    },
+    "direct-indirect-speech": {
+      "title": "Direct & Indirect Speech: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Direct and Indirect Speech for SSC CGL, RRB NTPC, Bank PO with detailed narration practice. Learn speech conversion rules, reported speech patterns, and tense modifications. Practice 350+ speech questions with systematic reporting techniques and competitive exam strategies.",
+      "primaryKeyword": "direct indirect speech",
+      "keywords": "direct indirect speech, SSC CGL reported speech, RRB NTPC narration, bank PO speech conversion, speech conversion rules, reported speech, narration rules, tense modifications, reporting techniques, verbal ability, speech shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/direct-indirect-speech"
+    },
+    "selecting-words": {
+      "title": "Selecting Words: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Selecting Words for SSC CGL, RRB NTPC, Bank PO with comprehensive contextual choice practice. Master word selection, contextual appropriateness, and semantic precision. Practice 400+ word selection questions with vocabulary discrimination and competitive exam strategies.",
+      "primaryKeyword": "selecting words",
+      "keywords": "selecting words, SSC CGL word selection, RRB NTPC contextual words, bank PO word choice, word selection, contextual appropriateness, semantic precision, vocabulary discrimination, word choice, verbal ability, selection shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/selecting-words"
+    },
+    "one-word-subsititution": {
+      "title": "One Word Substitution: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master One Word Substitution for SSC CGL, RRB NTPC, Bank PO with detailed vocabulary condensation practice. Learn phrase-to-word conversion, precise vocabulary, and meaning compression techniques. Practice 500+ substitution questions with advanced vocabulary and competitive exam strategies.",
+      "primaryKeyword": "one word subsititution",
+      "keywords": "one word substitution, SSC CGL one word substitution, RRB NTPC vocabulary substitution, bank PO word substitution, phrase to word conversion, precise vocabulary, meaning compression, vocabulary condensation, advanced vocabulary, verbal ability, substitution shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/one-word-subsititution"
+    },
+    "jumbled-words": {
+      "title": "Jumbled Words: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Jumbled Words for SSC CGL, RRB NTPC, Bank PO with comprehensive word rearrangement practice. Master letter arrangement, word formation, and anagram solving techniques. Practice 350+ jumbled word questions with systematic approaches and competitive exam strategies.",
+      "primaryKeyword": "jumbled words",
+      "keywords": "jumbled words, SSC CGL jumbled words, RRB NTPC word arrangement, bank PO anagrams, word rearrangement, letter arrangement, word formation, anagram solving, word puzzles, verbal ability, jumbled shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/jumbled-words"
+    },
+    "error-spotting": {
+      "title": "Error Spotting: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Error Spotting for SSC CGL, RRB NTPC, Bank PO with detailed grammatical error identification practice. Learn common error patterns, grammatical mistakes, and correction techniques. Practice 500+ error spotting questions with systematic error analysis and competitive exam strategies.",
+      "primaryKeyword": "error spotting",
+      "keywords": "error spotting, SSC CGL error detection, RRB NTPC grammar errors, bank PO error spotting, grammatical errors, error identification, common mistakes, error patterns, grammar correction, verbal ability, error shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/error-spotting"
+    },
+    "sentence-completion": {
+      "title": "Sentence Completion: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Sentence Completion for SSC CGL, RRB NTPC, Bank PO with comprehensive contextual filling practice. Master logical completion, contextual clues, and semantic coherence. Practice 400+ completion questions with reasoning techniques and competitive exam strategies.",
+      "primaryKeyword": "sentence completion",
+      "keywords": "sentence completion, SSC CGL sentence completion, RRB NTPC fill blanks, bank PO sentence filling, logical completion, contextual clues, semantic coherence, context understanding, sentence structure, verbal ability, completion shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/sentence-completion"
+    },
+    "sentence-correction": {
+      "title": "Sentence Correction: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Sentence Correction for SSC CGL, RRB NTPC, Bank PO with detailed grammatical improvement practice. Learn error identification, correction techniques, and sentence refinement methods. Practice 450+ correction questions with systematic grammar improvement and competitive exam strategies.",
+      "primaryKeyword": "sentence correction",
+      "keywords": "sentence correction, SSC CGL sentence correction, RRB NTPC grammar correction, bank PO sentence improvement, error identification, correction techniques, sentence refinement, grammar improvement, sentence structure, verbal ability, correction shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/sentence-correction"
+    },
+    "sentence-improvement": {
+      "title": "Sentence Improvement: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Sentence Improvement for SSC CGL, RRB NTPC, Bank PO with comprehensive sentence enhancement practice. Master style improvement, clarity enhancement, and structural optimization. Practice 400+ improvement questions with language refinement and competitive exam strategies.",
+      "primaryKeyword": "sentence improvement",
+      "keywords": "sentence improvement, SSC CGL sentence improvement, RRB NTPC language improvement, bank PO sentence enhancement, style improvement, clarity enhancement, structural optimization, language refinement, sentence quality, verbal ability, improvement shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/sentence-improvement"
+    },
+    "sentence-arrangement": {
+      "title": "Sentence Arrangement: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Sentence Arrangement for SSC CGL, RRB NTPC, Bank PO with detailed logical sequencing practice. Learn chronological order, logical flow, and coherent arrangement techniques. Practice 350+ arrangement questions with systematic ordering and competitive exam strategies.",
+      "primaryKeyword": "sentence arrangement",
+      "keywords": "sentence arrangement, SSC CGL sentence ordering, RRB NTPC logical sequence, bank PO sentence arrangement, logical sequencing, chronological order, logical flow, coherent arrangement, sequence ordering, verbal ability, arrangement shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/sentence-arrangement"
+    },
+    "para-jumbles": {
+      "title": "Para Jumbles: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Para Jumbles for SSC CGL, RRB NTPC, Bank PO with comprehensive paragraph rearrangement practice. Master logical flow, paragraph sequencing, and coherent structuring techniques. Practice 300+ para jumble questions with systematic approaches and competitive exam strategies.",
+      "primaryKeyword": "para jumbles",
+      "keywords": "para jumbles, SSC CGL para jumbles, RRB NTPC paragraph arrangement, bank PO para sequencing, paragraph rearrangement, logical flow, paragraph sequencing, coherent structuring, paragraph order, verbal ability, para jumbles shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/para-jumbles"
+    },
+    "cloze-test": {
+      "title": "Cloze Test: Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Cloze Test for SSC CGL, RRB NTPC, Bank PO with detailed fill-in-the-blanks practice. Learn contextual understanding, vocabulary application, and comprehension techniques. Practice 400+ cloze passages with systematic gap filling and competitive exam strategies.",
+      "primaryKeyword": "cloze test",
+      "keywords": "cloze test, SSC CGL cloze test, RRB NTPC fill blanks, bank PO cloze passages, fill in blanks, contextual understanding, vocabulary application, comprehension techniques, gap filling, verbal ability, cloze shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/cloze-test"
+    },
+    "para-summary": {
+      "title": "Para Summary: Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Para Summary for SSC CGL, RRB NTPC, Bank PO with comprehensive paragraph summarization practice. Master main idea extraction, concise writing, and essential point identification. Practice 250+ summary questions with condensation techniques and competitive exam strategies.",
+      "primaryKeyword": "para summary",
+      "keywords": "para summary, SSC CGL paragraph summary, RRB NTPC summarization, bank PO paragraph condensation, paragraph summarization, main idea extraction, concise writing, essential points, condensation techniques, verbal ability, summary shortcuts, competitive exam preparation",
+      "path": "/learn/verbal-ability/para-summary"
+    },
+    "tables": {
+      "title": "Tables: DI Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Table-based Data Interpretation for SSC CGL, RRB NTPC, Bank PO with comprehensive tabular analysis practice. Learn data extraction, comparative analysis, and percentage calculation techniques. Practice 400+ table-based questions with calculation shortcuts and competitive exam strategies.",
+      "primaryKeyword": "tables",
+      "keywords": "tables data interpretation, SSC CGL tables, RRB NTPC tabular DI, bank PO table analysis, data extraction, comparative analysis, percentage calculations, tabular data, calculation shortcuts, data interpretation, competitive exam preparation, table-based questions",
+      "path": "/learn/data-interpretation/tables"
+    },
+    "bar-graphs": {
+      "title": "Bar Graphs: DI Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Bar Graph interpretation for SSC CGL, RRB NTPC, Bank PO with detailed graphical analysis practice. Master value comparison, trend identification, and percentage calculation from bars. Practice 350+ bar graph questions with visual data techniques and competitive exam strategies.",
+      "primaryKeyword": "bar graphs",
+      "keywords": "bar graphs, SSC CGL bar graphs, RRB NTPC graphical DI, bank PO bar charts, value comparison, trend identification, percentage calculation, visual data analysis, graphical representation, data interpretation, bar graph shortcuts, competitive exam preparation",
+      "path": "/learn/data-interpretation/bar-graphs"
+    },
+    "line-charts": {
+      "title": "Line Charts: DI Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Line Chart interpretation for SSC CGL, RRB NTPC, Bank PO with comprehensive trend analysis practice. Learn slope analysis, intersection points, and growth rate calculations. Practice 300+ line chart questions with time-series analysis and competitive exam strategies.",
+      "primaryKeyword": "line charts",
+      "keywords": "line charts, SSC CGL line graphs, RRB NTPC trend analysis, bank PO line charts, slope analysis, intersection points, growth rate calculations, time series analysis, trend identification, data interpretation, line chart shortcuts, competitive exam preparation",
+      "path": "/learn/data-interpretation/line-charts"
+    },
+    "pie-charts": {
+      "title": "Pie Charts: DI Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Pie Chart interpretation for SSC CGL, RRB NTPC, Bank PO with detailed sectoral analysis practice. Master percentage distribution, proportional comparison, and angle calculation techniques. Practice 350+ pie chart questions with circular data analysis and competitive exam strategies.",
+      "primaryKeyword": "pie charts",
+      "keywords": "pie charts, SSC CGL pie charts, RRB NTPC circular graphs, bank PO pie diagrams, percentage distribution, proportional comparison, angle calculation, sectoral analysis, circular data, data interpretation, pie chart shortcuts, competitive exam preparation",
+      "path": "/learn/data-interpretation/pie-charts"
+    },
+    "mixed-charts": {
+      "title": "Mixed Charts: DI Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Mixed Charts interpretation for SSC CGL, RRB NTPC, Bank PO with comprehensive integrated analysis practice. Learn multi-format data extraction, cross-reference techniques, and combined visualization analysis. Practice 300+ mixed chart questions with integrated data skills and competitive exam strategies.",
+      "primaryKeyword": "mixed charts",
+      "keywords": "mixed charts, SSC CGL combined graphs, RRB NTPC multiple charts, bank PO mixed diagrams, multi format data, cross reference techniques, combined visualization, integrated analysis, complex data, data interpretation, mixed chart shortcuts, competitive exam preparation",
+      "path": "/learn/data-interpretation/mixed-charts"
+    },
+    "caselets": {
+      "title": "Caselets: DI Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Data Interpretation Caselets for SSC CGL, RRB NTPC, Bank PO with detailed scenario-based analysis practice. Master contextual data extraction, logical inference, and multi-step problem solving. Practice 250+ caselet questions with analytical reasoning and competitive exam strategies.",
+      "primaryKeyword": "caselets",
+      "keywords": "caselets, SSC CGL caselets, RRB NTPC data scenarios, bank PO case studies, contextual data extraction, logical inference, multi step problem solving, scenario based analysis, analytical reasoning, data interpretation, caselet shortcuts, competitive exam preparation",
+      "path": "/learn/data-interpretation/caselets"
+    },
+    "other-charts": {
+      "title": "Other Charts: DI Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Specialized Charts interpretation for SSC CGL, RRB NTPC, Bank PO with comprehensive diverse visualization practice. Learn histogram analysis, scatter plot interpretation, and radar chart techniques. Practice 200+ specialized chart questions with advanced visualization skills and competitive exam strategies.",
+      "primaryKeyword": "other charts",
+      "keywords": "specialized charts, SSC CGL advanced charts, RRB NTPC special graphs, bank PO diverse charts, histogram analysis, scatter plot interpretation, radar charts, diverse visualization, advanced charts, data interpretation, specialized chart shortcuts, competitive exam preparation",
+      "path": "/learn/data-interpretation/other-charts"
+    },
+    "cubes-and-dices": {
+      "title": "Cubes & Dices: DI Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Cubes and Dices Data Interpretation for SSC CGL, RRB NTPC, Bank PO with detailed 3D visualization practice. Master cube patterns, dice arrangements, and spatial reasoning techniques. Practice 250+ cube-dice questions with visual-spatial analysis and competitive exam strategies.",
+      "primaryKeyword": "cubes and dices",
+      "keywords": "cubes and dices DI, SSC CGL cube problems, RRB NTPC dice patterns, bank PO 3D visualization, cube patterns, dice arrangements, spatial reasoning, visual spatial analysis, 3D interpretation, data interpretation, cube dice shortcuts, competitive exam preparation",
+      "path": "/learn/data-interpretation/cubes-and-dices"
+    },
+    "blood-relations-1": {
+      "title": "Blood Relations: DI Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Blood Relations Data Interpretation for SSC CGL, RRB NTPC, Bank PO with comprehensive family tree analysis practice. Learn relationship mapping, generation tracking, and family connection techniques. Practice 300+ blood relation questions with logical reasoning and competitive exam strategies.",
+      "primaryKeyword": "blood relations 1",
+      "keywords": "blood relations DI, SSC CGL family relations, RRB NTPC relationship problems, bank PO blood relations, relationship mapping, generation tracking, family connections, family tree analysis, logical reasoning, data interpretation, blood relation shortcuts, competitive exam preparation",
+      "path": "/learn/data-interpretation/blood-relations-1"
+    },
+    "games-and-tournaments": {
+      "title": "Games & Tournaments: DI Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Games and Tournaments Data Interpretation for SSC CGL, RRB NTPC, Bank PO with detailed competitive scenario analysis. Master tournament structures, game patterns, and ranking techniques. Practice 250+ games-tournaments questions with logical sequencing and competitive exam strategies.",
+      "primaryKeyword": "games and tournaments",
+      "keywords": "games and tournaments DI, SSC CGL tournament problems, RRB NTPC game scenarios, bank PO tournament analysis, tournament structures, game patterns, ranking techniques, competitive scenarios, logical sequencing, data interpretation, tournament shortcuts, competitive exam preparation",
+      "path": "/learn/data-interpretation/games-and-tournaments"
+    },
+    "routes-and-networks": {
+      "title": "Routes & Networks: DI Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Routes and Networks Data Interpretation for SSC CGL, RRB NTPC, Bank PO with comprehensive path analysis practice. Learn network mapping, shortest path calculation, and connectivity assessment techniques. Practice 200+ routes-networks questions with spatial reasoning and competitive exam strategies.",
+      "primaryKeyword": "routes and networks",
+      "keywords": "routes and networks DI, SSC CGL path problems, RRB NTPC network analysis, bank PO route mapping, network mapping, shortest path calculation, connectivity assessment, path analysis, spatial reasoning, data interpretation, network shortcuts, competitive exam preparation",
+      "path": "/learn/data-interpretation/routes-and-networks"
+    },
+    "clocks-and-calendars-1": {
+      "title": "Clocks & Calendars: DI Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Clocks and Calendars Data Interpretation for SSC CGL, RRB NTPC, Bank PO with detailed time-based analysis practice. Master angle calculation, date determination, and time interval techniques. Practice 250+ clock-calendar questions with temporal reasoning and competitive exam strategies.",
+      "primaryKeyword": "clocks and calendars 1",
+      "keywords": "clocks and calendars DI, SSC CGL time problems, RRB NTPC calendar analysis, bank PO clock questions, angle calculation, date determination, time intervals, temporal reasoning, time based analysis, data interpretation, clock calendar shortcuts, competitive exam preparation",
+      "path": "/learn/data-interpretation/clocks-and-calendars-1"
+    },
+    "arrangement-and-distribution": {
+      "title": "Arrangement & Distribution: DI Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Arrangement and Distribution Data Interpretation for SSC CGL, RRB NTPC, Bank PO with comprehensive ordering practice. Learn seating arrangements, distribution patterns, and sequential ordering techniques. Practice 300+ arrangement questions with logical sequencing and competitive exam strategies.",
+      "primaryKeyword": "arrangement and distribution",
+      "keywords": "arrangement and distribution DI, SSC CGL arrangement problems, RRB NTPC distribution analysis, bank PO seating arrangements, distribution patterns, sequential ordering, logical sequencing, ordering techniques, arrangement analysis, data interpretation, arrangement shortcuts, competitive exam preparation",
+      "path": "/learn/data-interpretation/arrangement-and-distribution"
+    },
+    "venn-diagrams": {
+      "title": "Venn Diagrams: DI Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Venn Diagram interpretation for SSC CGL, RRB NTPC, Bank PO with detailed set analysis practice. Master intersection identification, union calculation, and set operation techniques. Practice 250+ Venn diagram questions with logical set theory and competitive exam strategies.",
+      "primaryKeyword": "venn diagrams",
+      "keywords": "venn diagrams, SSC CGL venn diagrams, RRB NTPC set theory, bank PO venn analysis, intersection identification, union calculation, set operations, set analysis, logical set theory, data interpretation, venn diagram shortcuts, competitive exam preparation",
+      "path": "/learn/data-interpretation/venn-diagrams"
+    },
+    "direction-senses": {
+      "title": "Direction Senses: DI Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Direction Sense Data Interpretation for SSC CGL, RRB NTPC, Bank PO with comprehensive spatial orientation practice. Learn direction tracking, distance calculation, and position determination techniques. Practice 300+ direction questions with spatial reasoning and competitive exam strategies.",
+      "primaryKeyword": "direction senses",
+      "keywords": "direction senses DI, SSC CGL direction problems, RRB NTPC direction sense, bank PO spatial orientation, direction tracking, distance calculation, position determination, spatial reasoning, orientation analysis, data interpretation, direction shortcuts, competitive exam preparation",
+      "path": "/learn/data-interpretation/direction-senses"
+    },
+    "coding-decoding-lrdi": {
+      "title": "Coding-Decoding: DI Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Coding-Decoding Data Interpretation for SSC CGL, RRB NTPC, Bank PO with detailed pattern recognition practice. Master code identification, cipher analysis, and pattern detection techniques. Practice 350+ coding-decoding questions with logical reasoning and competitive exam strategies.",
+      "primaryKeyword": "coding decoding lrdi",
+      "keywords": "coding decoding DI, SSC CGL coding problems, RRB NTPC decoding analysis, bank PO cipher questions, code identification, cipher analysis, pattern detection, pattern recognition, logical reasoning, data interpretation, coding shortcuts, competitive exam preparation",
+      "path": "/learn/data-interpretation/coding-decoding-lrdi"
+    },
+    "calculation-based-lrdi": {
+      "title": "Calculation Based: DI Practice Sets for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Master Calculation-Based Data Interpretation for SSC CGL, RRB NTPC, Bank PO with comprehensive numerical analysis practice. Learn arithmetic operations, formula application, and computational techniques. Practice 400+ calculation questions with mathematical reasoning and competitive exam strategies.",
+      "primaryKeyword": "calculation based lrdi",
+      "keywords": "calculation based DI, SSC CGL numerical DI, RRB NTPC calculation problems, bank PO mathematical DI, arithmetic operations, formula application, computational techniques, numerical analysis, mathematical reasoning, data interpretation, calculation shortcuts, competitive exam preparation",
+      "path": "/learn/data-interpretation/calculation-based-lrdi"
+    },
+    "reasoning-based-lrdi": {
+      "title": "Reasoning Based: DI Practice Questions for SSC CGL, RRB NTPC & Bank PO Exams | AptiDude",
+      "description": "Excel in Reasoning-Based Data Interpretation for SSC CGL, RRB NTPC, Bank PO with detailed logical analysis practice. Master deductive reasoning, inference drawing, and logical conclusion techniques. Practice 350+ reasoning questions with analytical thinking and competitive exam strategies.",
+      "primaryKeyword": "reasoning based lrdi",
+      "keywords": "reasoning based DI, SSC CGL logical DI, RRB NTPC reasoning problems, bank PO analytical DI, deductive reasoning, inference drawing, logical conclusions, logical analysis, analytical thinking, data interpretation, reasoning shortcuts, competitive exam preparation",
+      "path": "/learn/data-interpretation/reasoning-based-lrdi"
+    },
+    "other-lrdi": {
+      "title": "Other Lrdi - Data Interpretation | AptiDude",
+      "description": "Master Specialized Data Interpretation for SSC CGL, RRB NTPC, Bank PO with comprehensive diverse problem practice. Learn hybrid analysis, complex data interpretation, and specialized techniques. Practice 250+ miscellaneous DI questions with advanced approaches and competitive exam strategies.",
+      "primaryKeyword": "other lrdi",
+      "keywords": "specialized data interpretation, SSC CGL miscellaneous DI, RRB NTPC diverse problems, bank PO special DI, hybrid analysis, complex data interpretation, specialized techniques, advanced approaches, diverse problems, data interpretation, specialized shortcuts, competitive exam preparation",
+      "path": "/learn/data-interpretation/other-lrdi"
+    }
+  }
+}

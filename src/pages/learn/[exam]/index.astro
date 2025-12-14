@@ -1,0 +1,214 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { fetchAllQuestions, buildQuestionIndexes } from '../../../utils/dataFetcher';
+import { generateAllQuestionSEO, createSlug } from '../../../utils/seoGenerator';
+import type { Question } from '../../../types';
+
+export const getStaticPaths = (async () => {
+  console.log('🚀 Building Exam pages...');
+  const startTime = Date.now();
+  
+  const questions = await fetchAllQuestions();
+  const indexes = buildQuestionIndexes(questions);
+  const seoMap = generateAllQuestionSEO(questions);
+  
+  const examData = new Map<string, { topics: Map<string, Question[]>, totalQuestions: number }>();
+  
+  for (const [examName, examQuestions] of indexes.byExam) {
+    const topicsMap = new Map<string, Question[]>();
+    
+    for (const q of examQuestions) {
+      if (q.topic) {
+        if (!topicsMap.has(q.topic)) {
+          topicsMap.set(q.topic, []);
+        }
+        topicsMap.get(q.topic)!.push(q);
+      }
+    }
+    
+    examData.set(examName, {
+      topics: topicsMap,
+      totalQuestions: examQuestions.length
+    });
+  }
+  
+  const paths = Array.from(examData.entries()).map(([examName, data]) => {
+    const examSlug = createSlug(examName);
+    
+    const allExamQuestions = indexes.byExam.get(examName) || [];
+    const recentQuestions = allExamQuestions
+      .sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime())
+      .slice(0, 4)
+      .map(q => ({
+        question: q,
+        seo: seoMap.get(q.questionNumber)!
+      }));
+    
+    const topicsArray = Array.from(data.topics.entries()).map(([topicName, questions]) => ({
+      name: topicName,
+      slug: createSlug(topicName),
+      questionCount: questions.length,
+      difficultyBreakdown: {
+        easy: questions.filter(q => q.difficulty?.toLowerCase() === 'easy').length,
+        medium: questions.filter(q => q.difficulty?.toLowerCase() === 'medium').length,
+        hard: questions.filter(q => q.difficulty?.toLowerCase() === 'hard').length
+      }
+    })).sort((a, b) => b.questionCount - a.questionCount);
+    
+    return {
+      params: { exam: examSlug },
+      props: {
+        examName,
+        examSlug,
+        topics: topicsArray,
+        totalQuestions: data.totalQuestions,
+        recentQuestions
+      }
+    };
+  });
+  
+  const buildTime = ((Date.now() - startTime) / 1000).toFixed(2);
+  console.log(`✅ Built ${paths.length} Exam pages in ${buildTime}s\n`);
+  
+  return paths;
+}) satisfies GetStaticPaths;
+
+interface Props {
+  examName: string;
+  examSlug: string;
+  topics: Array<{ 
+    name: string; 
+    slug: string; 
+    questionCount: number;
+    difficultyBreakdown: { easy: number; medium: number; hard: number };
+  }>;
+  totalQuestions: number;
+  recentQuestions: Array<{ question: Question; seo: { slug: string; title: string } }>;
+}
+
+const { examName, examSlug, topics, totalQuestions, recentQuestions } = Astro.props;
+
+const isDev = import.meta.env.DEV;
+const APP_URL = isDev 
+  ? 'http://localhost:5173' 
+  : (import.meta.env.PUBLIC_APP_URL || 'https://aptidude.in/app');
+
+const title = `${examName} Practice Questions - ${totalQuestions}+ Questions | AptiDude`;
+const description = `Practice ${totalQuestions.toLocaleString()}+ ${examName} aptitude questions across ${topics.length} topics. Master ${topics.slice(0, 3).map(t => t.name).join(', ')} and more with detailed solutions.`;
+const canonical = `https://aptidude.in/learn/${examSlug}`;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aptidude.in" },
+    { "@type": "ListItem", "position": 2, "name": examName, "item": canonical }
+  ]
+};
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": title,
+  "description": description,
+  "url": canonical,
+  "numberOfItems": totalQuestions,
+  "hasPart": topics.slice(0, 10).map(t => ({
+    "@type": "WebPage",
+    "name": t.name,
+    "url": `https://aptidude.in/learn/${examSlug}/${t.slug}`
+  }))
+};
+
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  keywords={`${examName}, aptitude, practice questions, ${topics.slice(0, 5).map(t => t.name).join(', ')}`}
+  canonical={canonical}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">{examName}</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header class="exam-header">
+      <h1>{examName} Practice Questions</h1>
+      <div class="exam-stats">
+        <span class="stat"><strong>{totalQuestions.toLocaleString()}</strong> Questions</span>
+        <span class="stat"><strong>{topics.length}</strong> Topics</span>
+      </div>
+      <p class="exam-description">
+        Master {examName} aptitude with our comprehensive question bank across {topics.length} topics.
+      </p>
+    </header>
+
+    <section class="topics-section mb-10">
+      <div class="section-header">
+        <h2 class="section-title">Topics</h2>
+        <p class="section-subtitle">Practice by topic to focus on your weak areas</p>
+      </div>
+      
+      <div class="topics-grid">
+        {topics.map(topic => (
+          <a href={`/learn/${examSlug}/${topic.slug}`} class="topic-card">
+            <h3>{topic.name}</h3>
+            <span class="question-count">{topic.questionCount} questions</span>
+            {(topic.difficultyBreakdown.easy + topic.difficultyBreakdown.medium + topic.difficultyBreakdown.hard > 0) && (
+              <div class="difficulty-bar">
+                {topic.difficultyBreakdown.easy > 0 && (
+                  <span class="diff-easy" style={`width: ${(topic.difficultyBreakdown.easy / topic.questionCount) * 100}%`}></span>
+                )}
+                {topic.difficultyBreakdown.medium > 0 && (
+                  <span class="diff-medium" style={`width: ${(topic.difficultyBreakdown.medium / topic.questionCount) * 100}%`}></span>
+                )}
+                {topic.difficultyBreakdown.hard > 0 && (
+                  <span class="diff-hard" style={`width: ${(topic.difficultyBreakdown.hard / topic.questionCount) * 100}%`}></span>
+                )}
+              </div>
+            )}
+          </a>
+        ))}
+      </div>
+    </section>
+
+    {recentQuestions.length > 0 && (
+      <section class="questions-section mb-10">
+        <div class="section-header">
+          <h2 class="section-title">Recent Questions</h2>
+        </div>
+        <div class="question-grid">
+          {recentQuestions.map(({ question: q, seo: qSeo }) => (
+            <a href={`/questions/${qSeo.slug}`} class="question-card">
+              <div class="question-badges">
+                {q.topic && <span class="badge">{q.topic}</span>}
+                {q.difficulty && <span class={`badge badge-${q.difficulty.toLowerCase()}`}>{q.difficulty}</span>}
+              </div>
+              <p>{typeof q.statement === 'string' && !q.statement.startsWith('http') 
+                ? q.statement.substring(0, 120) + '...' 
+                : `${q.topic || 'Question'}`}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <section class="cta-section">
+      <h2>Start Practicing {examName}</h2>
+      <p>Get instant feedback with detailed solutions.</p>
+      <a href={`${APP_URL}/practice?exam=${encodeURIComponent(examName)}`} class="btn-primary" data-app-redirect={`${APP_URL}/practice?exam=${encodeURIComponent(examName)}`}>
+        Practice {examName} Questions
+      </a>
+    </section>
+  </main>
+</BaseLayout>

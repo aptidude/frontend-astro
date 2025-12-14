@@ -1,0 +1,301 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { fetchAllQuestions, buildQuestionIndexes } from '../utils/dataFetcher';
+import { generateAllQuestionSEO, createSlug } from '../utils/seoGenerator';
+import metaData from '../data/meta.json';
+
+// Fetch all questions for stats and exam data
+const questions = await fetchAllQuestions();
+const indexes = buildQuestionIndexes(questions);
+const seoMap = generateAllQuestionSEO(questions);
+
+// 5 Core Learning Courses (from meta.json)
+const CORE_COURSES = [
+  'quantitative-aptitude',
+  'logical-reasoning', 
+  'reading-comprehension',
+  'verbal-ability',
+  'data-interpretation'
+];
+
+// Unified color palette for courses and exams
+const colorPalette = [
+  '#4f46e5', // indigo
+  '#7c3aed', // violet
+  '#0ea5e9', // sky
+  '#10b981', // emerald
+  '#f59e0b', // amber
+  '#ef4444', // red
+  '#ec4899', // pink
+  '#06b6d4', // cyan
+  '#8b5cf6', // purple
+  '#14b8a6', // teal
+];
+
+// Course colors
+const courseColors: Record<string, string> = {
+  'quantitative-aptitude': colorPalette[0],
+  'logical-reasoning': colorPalette[1],
+  'reading-comprehension': colorPalette[2],
+  'verbal-ability': colorPalette[3],
+  'data-interpretation': colorPalette[4]
+};
+
+// Get learning courses with topic counts
+const learningCourses = CORE_COURSES.map(slug => {
+  const course = (metaData.courses as Record<string, any>)[slug];
+  if (!course) return null;
+  
+  const topicCount = Object.values(metaData.topics).filter(
+    (topic: any) => topic.path.startsWith(course.path)
+  ).length;
+  
+  return {
+    slug,
+    name: course.title.split('|')[0].replace('Course', '').trim(),
+    path: course.path,
+    topicCount,
+    color: courseColors[slug]
+  };
+}).filter(Boolean) as Array<{
+  slug: string;
+  name: string;
+  path: string;
+  topicCount: number;
+  color: string;
+}>;
+
+// Get exams with question counts (from the actual question data)
+const examData = Array.from(indexes.byExam.entries())
+  .map(([examName, examQuestions], index) => ({
+    name: examName,
+    slug: createSlug(examName),
+    questionCount: examQuestions.length,
+    topicCount: new Set(examQuestions.map(q => q.topic).filter(Boolean)).size,
+    color: colorPalette[index % colorPalette.length]
+  }))
+  .sort((a, b) => b.questionCount - a.questionCount)
+  .slice(0, 6);
+
+// Get recent questions for homepage preview
+const recentQuestions = questions
+  .sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime())
+  .slice(0, 6)
+  .map(q => ({
+    question: q,
+    seo: seoMap.get(q.questionNumber)!
+  }));
+
+// Stats
+const totalQuestions = questions.length;
+const totalTopics = indexes.byTopic.size;
+const totalExams = indexes.byExam.size;
+
+// Detect development mode
+const isDev = import.meta.env.DEV;
+const APP_URL = isDev 
+  ? 'http://localhost:5173' 
+  : (import.meta.env.PUBLIC_APP_URL || 'https://aptidude.in/app');
+
+// Popular topics (top 10 to fill grid)
+const popularTopics = Array.from(indexes.byTopic.entries())
+  .sort((a, b) => b[1].length - a[1].length)
+  .slice(0, 10)
+  .map(([topicName, topicQuestions]) => {
+    const examCounts = new Map<string, number>();
+    topicQuestions.forEach(q => {
+      if (q.exam) {
+        examCounts.set(q.exam, (examCounts.get(q.exam) || 0) + 1);
+      }
+    });
+    const topExam = Array.from(examCounts.entries()).sort((a, b) => b[1] - a[1])[0]?.[0];
+    const examSlug = topExam ? createSlug(topExam) : '';
+    const topicSlug = createSlug(topicName);
+    
+    return {
+      name: topicName,
+      slug: topicSlug,
+      examSlug,
+      questionCount: topicQuestions.length,
+      href: examSlug ? `/learn/${examSlug}/${topicSlug}` : '#'
+    };
+  });
+
+// SEO data
+const title = "Practice Aptitude Questions | 10000+ Questions for CAT, SSC, Banking & Placements | AptiDude";
+const description = `Master aptitude with ${totalQuestions.toLocaleString()}+ practice questions across ${totalTopics} topics. Prepare for CAT, SSC CGL, Bank PO, placements with detailed solutions. Free practice tests & analytics.`;
+
+// Organization Schema
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AptiDude",
+  "url": "https://aptidude.in",
+  "logo": "https://aptidude.in/logo-social.png",
+  "description": "India's leading platform for competitive aptitude practice",
+  "sameAs": [
+    "https://www.linkedin.com/company/theaptidude",
+    "https://www.instagram.com/aptidude.in",
+    "https://x.com/aptidudedotin",
+    "https://www.youtube.com/@aptidudedotin"
+  ]
+};
+
+// Website Schema
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AptiDude",
+  "url": "https://aptidude.in",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://aptidude.in/app/practice?search={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  canonical="https://aptidude.in"
+  keywords="aptitude questions, aptitude test, CAT preparation, SSC CGL, bank PO, placement aptitude, quantitative aptitude, logical reasoning, aptitude practice"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Master Aptitude. <span>Ace Every Exam.</span></h1>
+      <p class="hero-subtitle">
+        Practice {totalQuestions.toLocaleString()}+ questions across {totalTopics} topics. 
+        Prepare for CAT, SSC, Banking, and Placements with detailed solutions.
+      </p>
+      
+      <div class="hero-actions">
+        <a href={`${APP_URL}/practice`} class="btn-primary">Start Practicing</a>
+        <a href="/learn" class="btn-secondary">Browse Courses</a>
+      </div>
+      
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>{totalQuestions.toLocaleString()}+</strong>
+          <span>Questions</span>
+        </div>
+        <div class="hero-stat">
+          <strong>{totalTopics}</strong>
+          <span>Topics</span>
+        </div>
+        <div class="hero-stat">
+          <strong>{totalExams}</strong>
+          <span>Exams</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- Learn Section -->
+    <section class="mb-10">
+      <div class="section-header">
+        <h2 class="section-title">Learn from Basics</h2>
+        <p class="section-subtitle">Master aptitude with structured courses</p>
+      </div>
+      
+      <div class="card-grid card-grid-3">
+        {learningCourses.map(course => (
+          <a href={course.path} class="course-card">
+            <div class="course-indicator" style={`background: ${course.color}`}></div>
+            <div class="course-info">
+              <h3>{course.name}</h3>
+              <div class="course-meta">
+                <span>{course.topicCount} topics</span>
+              </div>
+            </div>
+            <span class="course-arrow">→</span>
+          </a>
+        ))}
+      </div>
+      
+      <div class="text-center mt-6">
+        <a href="/learn" class="btn-secondary">View All Courses →</a>
+      </div>
+    </section>
+
+    <!-- Practice by Exam Section -->
+    <section class="mb-10">
+      <div class="section-header">
+        <h2 class="section-title">Practice by Exam</h2>
+        <p class="section-subtitle">Questions from previous year papers</p>
+      </div>
+      
+      <div class="card-grid card-grid-3">
+        {examData.map(exam => (
+          <a href={`/learn/${exam.slug}`} class="course-card">
+            <div class="course-indicator" style={`background: ${exam.color}`}></div>
+            <div class="course-info">
+              <h3>{exam.name}</h3>
+              <div class="course-meta">
+                <span>{exam.questionCount.toLocaleString()} questions · {exam.topicCount} topics</span>
+              </div>
+            </div>
+            <span class="course-arrow">→</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Popular Topics -->
+    <section class="mb-10">
+      <div class="section-header">
+        <h2 class="section-title">Popular Topics</h2>
+        <p class="section-subtitle">Most practiced topics by students</p>
+      </div>
+      
+      <div class="topics-grid">
+        {popularTopics.map(topic => (
+          <a href={topic.href} class="topic-card">
+            <h3>{topic.name}</h3>
+            <span class="question-count">{topic.questionCount} questions</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Recent Questions -->
+    {recentQuestions.length > 0 && (
+      <section class="questions-section mb-10">
+        <div class="section-header">
+          <h2 class="section-title">Recent Questions</h2>
+          <p class="section-subtitle">Latest additions to our question bank</p>
+        </div>
+        
+        <div class="question-grid">
+          {recentQuestions.map(({ question: q, seo: qSeo }) => (
+            <a href={`/questions/${qSeo.slug}`} class="question-card">
+              <div class="question-badges">
+                {q.exam && <span class={`badge badge-${createSlug(q.exam)}`}>{q.exam}</span>}
+                {q.difficulty && <span class={`badge badge-${q.difficulty.toLowerCase()}`}>{q.difficulty}</span>}
+              </div>
+              <p>{typeof q.statement === 'string' && !q.statement.startsWith('http') 
+                ? q.statement.substring(0, 120) + '...' 
+                : `${q.topic || 'Visual'} Question`}</p>
+              {q.topic && <span class="question-topic">{q.topic}</span>}
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <h2>Ready to Practice?</h2>
+      <p>Get instant feedback, detailed solutions, and track your progress.</p>
+      <div class="cta-buttons">
+        <a href={APP_URL} class="btn-primary" data-app-redirect={APP_URL}>Open AptiDude App</a>
+        <a href={`${APP_URL}/compete`} class="btn-secondary">Join Contest</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

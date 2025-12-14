@@ -1,0 +1,203 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import metaData from '../../data/meta.json';
+import { fetchAllCourses } from '../../utils/dataFetcher';
+
+export const getStaticPaths = (async () => {
+  const coreCoursesList = [
+    'quantitative-aptitude',
+    'logical-reasoning', 
+    'reading-comprehension',
+    'verbal-ability',
+    'data-interpretation'
+  ];
+
+  console.log('🚀 Building Learn Course pages from API...');
+  const startTime = Date.now();
+  
+  const paths = [];
+  const courses = await fetchAllCourses();
+  const coreCourses = courses.filter(c => coreCoursesList.includes(c.slug));
+  
+  for (const course of coreCourses) {
+    const allTopics: any[] = [];
+    
+    for (const subjectItem of course.subjects || []) {
+      const subject = subjectItem.subject || subjectItem;
+      if (!subject?.topics) continue;
+      
+      for (const topicItem of subject.topics) {
+        const topic = topicItem.topic || topicItem;
+        if (!topic || !topic.isPublished) continue;
+        
+        allTopics.push({
+          slug: topic.slug,
+          title: topic.title,
+          description: topic.description || '',
+          path: `/learn/${course.slug}/${topic.slug}`
+        });
+      }
+    }
+    
+    const metaCourse = (metaData.courses as Record<string, any>)[course.slug];
+    
+    paths.push({
+      params: { course: course.slug },
+      props: {
+        course: {
+          slug: course.slug,
+          title: course.title,
+          description: course.description || '',
+          thumbnail: course.thumbnail
+        },
+        metaCourse,
+        topics: allTopics
+      }
+    });
+  }
+  
+  const buildTime = ((Date.now() - startTime) / 1000).toFixed(2);
+  console.log(`✅ Built ${paths.length} Learn Course pages in ${buildTime}s\n`);
+  
+  return paths;
+}) satisfies GetStaticPaths;
+
+interface Props {
+  course: {
+    slug: string;
+    title: string;
+    description: string;
+    thumbnail?: string;
+  };
+  metaCourse?: {
+    title: string;
+    description: string;
+    keywords: string;
+    path: string;
+  };
+  topics: Array<{
+    slug: string;
+    title: string;
+    description: string;
+    path: string;
+  }>;
+}
+
+const { course, metaCourse, topics } = Astro.props;
+
+const isDev = import.meta.env.DEV;
+const APP_URL = isDev 
+  ? 'http://localhost:5173' 
+  : (import.meta.env.PUBLIC_APP_URL || 'https://aptidude.in/app');
+
+const SITE_URL = isDev ? 'http://localhost:4321' : 'https://aptidude.in';
+
+const title = metaCourse?.title || `${course.title} - Learn Online | AptiDude`;
+const description = metaCourse?.description || course.description || `Master ${course.title} with detailed lessons and practice questions.`;
+const keywords = metaCourse?.keywords || `${course.title}, aptitude, learn, practice, competitive exams`;
+const canonical = `${SITE_URL}/learn/${course.slug}`;
+
+// Course Schema
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": course.title,
+  "description": description,
+  "url": canonical,
+  "provider": {
+    "@type": "Organization",
+    "name": "AptiDude",
+    "sameAs": SITE_URL
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR",
+    "availability": "https://schema.org/InStock"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online"
+  },
+  "numberOfCredits": topics.length,
+  "hasPart": topics.slice(0, 20).map(topic => ({
+    "@type": "Course",
+    "name": topic.title,
+    "url": `${SITE_URL}${topic.path}`
+  }))
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+    { "@type": "ListItem", "position": 2, "name": "Learn", "item": `${SITE_URL}/learn` },
+    { "@type": "ListItem", "position": 3, "name": course.title, "item": canonical }
+  ]
+};
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonical={canonical}
+  schema={courseSchema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/learn">Learn</a></li>
+        <li aria-current="page">{course.title}</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header class="course-header">
+      <h1>{course.title}</h1>
+      <p class="course-description">{description}</p>
+      <div class="course-stats">
+        <span class="stat"><strong>{topics.length}</strong> <span>Topics</span></span>
+        <span class="stat"><strong>Free</strong> <span>Access</span></span>
+        <span class="stat"><strong>100%</strong> <span>Online</span></span>
+      </div>
+    </header>
+
+    <!-- Topics List -->
+    <section class="topics-section">
+      <div class="section-header">
+        <h2 class="section-title">Course Topics</h2>
+        <p class="section-subtitle">Master each topic with detailed explanations and practice questions.</p>
+      </div>
+      
+      <div class="topics-grid">
+        {topics.map((topic, index) => (
+          <a href={topic.path} class="topic-card">
+            <span class="topic-number">{String(index + 1).padStart(2, '0')}</span>
+            <div class="topic-content">
+              <h3>{topic.title}</h3>
+              {topic.description && <p>{topic.description.substring(0, 60)}...</p>}
+            </div>
+            <span class="topic-arrow">→</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2>Ready to Practice {course.title}?</h2>
+      <p>Test your knowledge with interactive questions and track your progress.</p>
+      <div class="cta-buttons">
+        <a href={`${APP_URL}/learn/${course.slug}`} class="btn-primary">Start Learning</a>
+        <a href={`${APP_URL}/practice`} class="btn-secondary">Practice Questions</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,259 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { fetchAllQuestions, getRelatedQuestions, buildQuestionIndexes } from '../../utils/dataFetcher';
+import { generateAllQuestionSEO, createSlug } from '../../utils/seoGenerator';
+import { renderMarkdown } from '../../utils/markdownRenderer';
+import type { Question } from '../../types';
+
+export const getStaticPaths = (async () => {
+  console.log('🚀 Starting question pages build...');
+  const startTime = Date.now();
+  
+  const questions = await fetchAllQuestions();
+  
+  console.log('📝 Generating SEO data for all questions...');
+  const seoMap = generateAllQuestionSEO(questions);
+  console.log(`✅ Generated SEO for ${seoMap.size} questions`);
+  
+  console.log('🔍 Building question indexes...');
+  const indexes = buildQuestionIndexes(questions);
+  console.log(`✅ Built indexes: ${indexes.byTopic.size} topics, ${indexes.byCategory.size} categories`);
+  
+  const paths = questions.map((question) => {
+    const seo = seoMap.get(question.questionNumber)!;
+    const related = getRelatedQuestions(question, indexes, 6);
+    
+    const relatedWithSeo = related.map(q => ({
+      question: q,
+      seo: seoMap.get(q.questionNumber)!
+    }));
+    
+    return {
+      params: { slug: seo.slug },
+      props: { 
+        question,
+        seo,
+        relatedQuestions: relatedWithSeo
+      }
+    };
+  });
+  
+  const buildTime = ((Date.now() - startTime) / 1000).toFixed(2);
+  console.log(`⚡ Build complete in ${buildTime}s\n`);
+  
+  return paths;
+}) satisfies GetStaticPaths;
+
+interface Props {
+  question: Question;
+  seo: {
+    slug: string;
+    title: string;
+    description: string;
+    keywords: string[];
+    canonical: string;
+    ogImage: string;
+    schema: any;
+  };
+  relatedQuestions: Array<{ question: Question; seo: typeof seo }>;
+}
+
+const { question, seo, relatedQuestions } = Astro.props;
+
+const examSlug = question.exam ? createSlug(question.exam) : '';
+const topicSlug = question.topic ? createSlug(question.topic) : '';
+
+const isDev = import.meta.env.DEV;
+const APP_URL = isDev 
+  ? 'http://localhost:5173' 
+  : (import.meta.env.PUBLIC_APP_URL || 'https://aptidude.in/app');
+const appUrl = `${APP_URL}/question/${question.questionNumber}`;
+
+function getPlainTitle(statement: string): string {
+  if (!statement || typeof statement !== 'string') return 'Question';
+  if (statement.startsWith('http')) return `${question.topic || 'Aptitude'} Visual Question`;
+  
+  const rendered = renderMarkdown(statement);
+  const plainText = rendered
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  
+  if (plainText.length > 150) {
+    return plainText.substring(0, 150) + '...';
+  }
+  return plainText;
+}
+
+const displayTitle = getPlainTitle(question.statement);
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aptidude.in" },
+    ...(question.exam ? [{ "@type": "ListItem", "position": 2, "name": question.exam, "item": `https://aptidude.in/learn/${examSlug}` }] : []),
+    ...(question.topic && examSlug ? [{ "@type": "ListItem", "position": 3, "name": question.topic, "item": `https://aptidude.in/learn/${examSlug}/${topicSlug}` }] : []),
+    { "@type": "ListItem", "position": question.exam && question.topic ? 4 : (question.exam ? 3 : 2), "name": `Question #${question.questionNumber}` }
+  ]
+};
+---
+
+<BaseLayout 
+  title={seo.title}
+  description={seo.description}
+  keywords={seo.keywords.join(', ')}
+  canonical={seo.canonical}
+  ogImage={seo.ogImage}
+  schema={seo.schema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        {question.exam && <li><a href={`/learn/${examSlug}`}>{question.exam}</a></li>}
+        {question.topic && examSlug && <li><a href={`/learn/${examSlug}/${topicSlug}`}>{question.topic}</a></li>}
+        <li aria-current="page">Q#{question.questionNumber}</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+    <article class="question-content">
+      <h1>{displayTitle}</h1>
+      
+      <div class="metadata">
+        {question.exam && <span class={`badge badge-${createSlug(question.exam)}`}>{question.exam}</span>}
+        {question.subExam && question.subExam !== 'General' && question.subExam !== question.exam && <span class="badge">{question.subExam}</span>}
+        {question.difficulty && <span class={`badge badge-${question.difficulty.toLowerCase()}`}>{question.difficulty}</span>}
+        {question.topic && <span class="badge">{question.topic}</span>}
+        {question.type && <span class="badge">{question.type}</span>}
+      </div>
+
+      {question.passage && (
+        <div class="passage">
+          <h2>Passage</h2>
+          <div class="passage-content" set:html={renderMarkdown(question.passage)} />
+        </div>
+      )}
+
+      <div class="statement">
+        <h2>Question</h2>
+        {typeof question.statement === 'string' && !question.statement.startsWith('http') ? (
+          <div class="statement-content" set:html={renderMarkdown(question.statement)} />
+        ) : (
+          <img 
+            src={question.statement} 
+            alt={`${question.topic || 'Aptitude'} question image`} 
+            loading="lazy"
+          />
+        )}
+      </div>
+
+      {(question.type === 'MCQ' || question.type === 'Multiple Correct') && question.options && question.options.length > 0 && (
+        <div class="options">
+          <h3>Options</h3>
+          {question.options.slice(0, 5).map((opt, i) => {
+            const isText = !opt.type || opt.type === 'text';
+            const isNotUrl = typeof opt.content === 'string' && !opt.content.startsWith('http');
+            return (
+              <div class="option">
+                <strong>{String.fromCharCode(65 + i)}.</strong>
+                {isText && isNotUrl ? (
+                  <div class="option-content" set:html={renderMarkdown(opt.content)} />
+                ) : (
+                  <img 
+                    src={opt.content} 
+                    alt={`Option ${String.fromCharCode(65 + i)}`} 
+                    loading="lazy"
+                  />
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {question.type === 'Integer' && (
+        <div class="options">
+          <h3>Answer Format</h3>
+          <p style="color: var(--text-secondary);">Enter your answer as an integer value</p>
+        </div>
+      )}
+
+      {question.tags && question.tags.length > 0 && (
+        <div class="tags">
+          {question.tags.map(tag => <span class="tag">{tag}</span>)}
+        </div>
+      )}
+    </article>
+
+    <div class="solve-cta">
+      <p class="redirect-notice">Loading interactive solver...</p>
+      <h2>Solve This Question</h2>
+      <p>Get instant feedback with detailed step-by-step solution</p>
+      <a href={appUrl} class="btn-primary" id="solve-cta">Start Solving →</a>
+    </div>
+
+    <section class="practice-links">
+      <h3>Continue Practicing</h3>
+      <ul class="link-list">
+        {question.exam && question.topic && examSlug && topicSlug && (
+          <li><a href={`/learn/${examSlug}/${topicSlug}`}>More {question.topic} questions</a></li>
+        )}
+        {question.exam && examSlug && (
+          <li><a href={`/learn/${examSlug}`}>All {question.exam} topics</a></li>
+        )}
+        <li><a href={`${APP_URL}/practice`}>Free practice mode</a></li>
+      </ul>
+    </section>
+
+    {relatedQuestions.length > 0 && question.topic && (
+      <section class="related-questions">
+        <h2>Similar Questions</h2>
+        <div class="question-grid">
+          {relatedQuestions.map(({ question: q, seo: qSeo }) => (
+            <a href={`/questions/${qSeo.slug}`} class="question-card">
+              <div class="question-badges">
+                {q.exam && <span class={`badge badge-${createSlug(q.exam)}`}>{q.exam}</span>}
+                {q.difficulty && <span class={`badge badge-${q.difficulty?.toLowerCase()}`}>{q.difficulty}</span>}
+              </div>
+              <p>{typeof q.statement === 'string' && !q.statement.startsWith('http') 
+                ? q.statement.substring(0, 100) + '...' 
+                : `${q.topic || 'Question'}`}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+  </main>
+
+  <!-- Auto-redirect script for production -->
+  <script define:vars={{ appUrl }}>
+    // Quick redirect after minimal delay (500ms)
+    // Just enough time for content to flash for SEO bots
+    setTimeout(() => {
+      // Only redirect if user hasn't scrolled or interacted
+      if (window.scrollY < 100) {
+        window.location.href = appUrl;
+      }
+    }, 500);
+    
+    // Handle CTA click
+    document.getElementById('solve-cta')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.href = appUrl;
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  .redirect-notice {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    margin-bottom: var(--space-3);
+  }
+</style>

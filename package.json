@@ -1,0 +1,21 @@
+{
+  "name": "aptidude-seo",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "AptiDude SEO Layer - Pre-rendered pages for search engine indexing",
+  "scripts": {
+    "dev": "astro dev --port 4321",
+    "build": "astro build",
+    "build:prod": "cross-env API_URL=https://tdgc50rc8h.execute-api.ap-south-1.amazonaws.com PUBLIC_APP_URL=https://aptidude.in/app astro build",
+    "preview": "astro preview --port 4321",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.16.0",
+    "katex": "^0.16.25",
+    "marked": "^17.0.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}

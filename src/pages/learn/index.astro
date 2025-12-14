@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import metaData from '../../data/meta.json';
+
+// Get learn page metadata
+const learnMeta = metaData.pages.learn;
+
+// Only the 5 core learning courses
+const CORE_COURSES = [
+  'quantitative-aptitude',
+  'logical-reasoning', 
+  'reading-comprehension',
+  'verbal-ability',
+  'data-interpretation'
+];
+
+// Course colors (no oversized icons)
+const courseColors: Record<string, string> = {
+  'quantitative-aptitude': '#3b82f6',
+  'logical-reasoning': '#8b5cf6',
+  'reading-comprehension': '#10b981',
+  'verbal-ability': '#f59e0b',
+  'data-interpretation': '#ef4444'
+};
+
+// Get only core courses with their metadata
+const courses = CORE_COURSES
+  .map(slug => {
+    const data = (metaData.courses as Record<string, any>)[slug];
+    if (!data) return null;
+    return {
+      slug,
+      ...data,
+      path: data.path,
+      color: courseColors[slug]
+    };
+  })
+  .filter(Boolean) as Array<{
+    slug: string;
+    title: string;
+    description: string;
+    path: string;
+    keywords: string;
+    color: string;
+  }>;
+
+// Detect development mode
+const isDev = import.meta.env.DEV;
+const APP_URL = isDev 
+  ? 'http://localhost:5173' 
+  : (import.meta.env.PUBLIC_APP_URL || 'https://aptidude.in/app');
+
+const SITE_URL = isDev ? 'http://localhost:4321' : 'https://aptidude.in';
+
+// SEO data from meta.json
+const title = learnMeta.title;
+const description = learnMeta.description;
+const keywords = learnMeta.keywords;
+const canonical = `${SITE_URL}${learnMeta.path}`;
+
+// Course stats (topics count per course)
+const getCourseTopicCount = (coursePath: string) => {
+  return Object.values(metaData.topics).filter(
+    (topic: any) => topic.path.startsWith(coursePath)
+  ).length;
+};
+
+// Page Schema
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": title,
+  "description": description,
+  "url": canonical,
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "AptiDude Learning Courses",
+    "numberOfItems": courses.length,
+    "itemListElement": courses.map((course, index) => ({
+      "@type": "Course",
+      "position": index + 1,
+      "name": course.title.split('|')[0].trim(),
+      "description": course.description,
+      "url": `${SITE_URL}${course.path}`,
+      "provider": {
+        "@type": "Organization",
+        "name": "AptiDude",
+        "sameAs": SITE_URL
+      }
+    }))
+  }
+};
+
+// Breadcrumb Schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+    { "@type": "ListItem", "position": 2, "name": "Learn", "item": canonical }
+  ]
+};
+---
+
+<BaseLayout 
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonical={canonical}
+  schema={pageSchema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">Learn</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header class="page-header">
+      <h1>Learn Aptitude Online</h1>
+      <p>Master aptitude with our comprehensive courses. Free, detailed, and designed for competitive exam success.</p>
+    </header>
+
+    <!-- Courses Section -->
+    <section class="mb-10">
+      <div class="section-header">
+        <h2 class="section-title">Choose Your Learning Path</h2>
+        <p class="section-subtitle">Structured courses with detailed explanations</p>
+      </div>
+      
+      <div class="learn-grid">
+        {courses.map(course => {
+          const topicCount = getCourseTopicCount(course.path);
+          const courseTitle = course.title.split('|')[0].trim();
+          
+          return (
+            <a href={course.path} class="learn-card" style={`border-top: 3px solid ${course.color}`}>
+              <h3>{courseTitle}</h3>
+              <p>{course.description.substring(0, 100)}...</p>
+              <div class="learn-card-meta">
+                <span class="topics">{topicCount} topics</span>
+                <span class="arrow">Start Learning →</span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <h2>Why Learn with AptiDude?</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <h3>Comprehensive Content</h3>
+          <p>140+ topics covering all aptitude areas with detailed explanations</p>
+        </div>
+        <div class="feature">
+          <h3>Exam-Focused</h3>
+          <p>Content aligned with SSC, Banking, CAT, CUET & placement exams</p>
+        </div>
+        <div class="feature">
+          <h3>Shortcuts & Tricks</h3>
+          <p>Time-saving techniques to solve problems faster in exams</p>
+        </div>
+        <div class="feature">
+          <h3>Practice Questions</h3>
+          <p>10,000+ practice questions with step-by-step solutions</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <h2>Ready to Start Learning?</h2>
+      <p>Create a free account to track your progress and unlock all features.</p>
+      <div class="cta-buttons">
+        <a href={`${APP_URL}/learn`} class="btn-primary">Start Learning for Free</a>
+        <a href={`${APP_URL}/practice`} class="btn-secondary">Practice Questions</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

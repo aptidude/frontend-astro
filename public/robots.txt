@@ -1,0 +1,24 @@
+# AptiDude SEO Layer Robots.txt
+# https://aptidude.in
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://aptidude.in/sitemap.xml
+
+# Allow Google to crawl everything
+User-agent: Googlebot
+Allow: /
+
+# Allow Bing to crawl everything
+User-agent: Bingbot
+Allow: /
+
+# Disallow crawling of app-specific paths that should not be indexed
+# (The React app handles its own SEO for these routes)
+User-agent: *
+Disallow: /app/admin/
+Disallow: /app/profile/
+Disallow: /app/analytics/
+
