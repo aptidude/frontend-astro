@@ -40,6 +40,11 @@
       "permanent": true
     },
     {
+      "source": "/",
+      "destination": "https://app.aptidude.in/",
+      "permanent": false
+    },
+    {
       "source": "/app/:path*",
       "destination": "https://app.aptidude.in/$1",
       "permanent": false
