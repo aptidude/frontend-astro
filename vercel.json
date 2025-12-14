@@ -38,116 +38,131 @@
       ],
       "destination": "https://aptidude.in/$1",
       "permanent": true
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/app/question/:path*",
-      "destination": "https://app.aptidude.in/question/:path*"
     },
     {
-      "source": "/app/learn/:path*",
-      "destination": "https://app.aptidude.in/learn/:path*"
-    },
-    {
-      "source": "/question/:path*",
-      "destination": "https://app.aptidude.in/question/:path*"
+      "source": "/app/:path*",
+      "destination": "https://app.aptidude.in/$1",
+      "permanent": false
     },
     {
       "source": "/practice",
-      "destination": "https://app.aptidude.in/practice"
+      "destination": "https://app.aptidude.in/practice",
+      "permanent": false
     },
     {
       "source": "/compete/:path*",
-      "destination": "https://app.aptidude.in/compete/:path*"
+      "destination": "https://app.aptidude.in/compete/:path*",
+      "permanent": false
     },
     {
       "source": "/discuss/:path*",
-      "destination": "https://app.aptidude.in/discuss/:path*"
+      "destination": "https://app.aptidude.in/discuss/:path*",
+      "permanent": false
     },
     {
       "source": "/blogs/:path*",
-      "destination": "https://app.aptidude.in/blogs/:path*"
+      "destination": "https://app.aptidude.in/blogs/:path*",
+      "permanent": false
     },
     {
       "source": "/profile/:path*",
-      "destination": "https://app.aptidude.in/profile/:path*"
+      "destination": "https://app.aptidude.in/profile/:path*",
+      "permanent": false
     },
     {
       "source": "/admin/:path*",
-      "destination": "https://app.aptidude.in/admin/:path*"
+      "destination": "https://app.aptidude.in/admin/:path*",
+      "permanent": false
     },
     {
       "source": "/login",
-      "destination": "https://app.aptidude.in/login"
+      "destination": "https://app.aptidude.in/login",
+      "permanent": false
     },
     {
       "source": "/signup",
-      "destination": "https://app.aptidude.in/signup"
+      "destination": "https://app.aptidude.in/signup",
+      "permanent": false
     },
     {
       "source": "/analytics",
-      "destination": "https://app.aptidude.in/analytics"
+      "destination": "https://app.aptidude.in/analytics",
+      "permanent": false
     },
     {
       "source": "/about",
-      "destination": "https://app.aptidude.in/about"
+      "destination": "https://app.aptidude.in/about",
+      "permanent": false
     },
     {
       "source": "/contact",
-      "destination": "https://app.aptidude.in/contact"
+      "destination": "https://app.aptidude.in/contact",
+      "permanent": false
     },
     {
       "source": "/terms",
-      "destination": "https://app.aptidude.in/terms"
+      "destination": "https://app.aptidude.in/terms",
+      "permanent": false
     },
     {
       "source": "/privacy",
-      "destination": "https://app.aptidude.in/privacy"
+      "destination": "https://app.aptidude.in/privacy",
+      "permanent": false
     },
     {
       "source": "/cookies",
-      "destination": "https://app.aptidude.in/cookies"
+      "destination": "https://app.aptidude.in/cookies",
+      "permanent": false
     },
     {
       "source": "/careers/:path*",
-      "destination": "https://app.aptidude.in/careers/:path*"
+      "destination": "https://app.aptidude.in/careers/:path*",
+      "permanent": false
     },
     {
       "source": "/lists/:path*",
-      "destination": "https://app.aptidude.in/lists/:path*"
+      "destination": "https://app.aptidude.in/lists/:path*",
+      "permanent": false
     },
     {
       "source": "/question-lists/:path*",
-      "destination": "https://app.aptidude.in/question-lists/:path*"
+      "destination": "https://app.aptidude.in/question-lists/:path*",
+      "permanent": false
     },
     {
       "source": "/catmocks/:path*",
-      "destination": "https://app.aptidude.in/catmocks/:path*"
+      "destination": "https://app.aptidude.in/catmocks/:path*",
+      "permanent": false
     },
     {
       "source": "/auth/:path*",
-      "destination": "https://app.aptidude.in/auth/:path*"
+      "destination": "https://app.aptidude.in/auth/:path*",
+      "permanent": false
     },
     {
       "source": "/forgotpassword",
-      "destination": "https://app.aptidude.in/forgotpassword"
+      "destination": "https://app.aptidude.in/forgotpassword",
+      "permanent": false
     },
     {
       "source": "/resetpassword/:path*",
-      "destination": "https://app.aptidude.in/resetpassword/:path*"
+      "destination": "https://app.aptidude.in/resetpassword/:path*",
+      "permanent": false
     },
     {
       "source": "/unsubscribe",
-      "destination": "https://app.aptidude.in/unsubscribe"
+      "destination": "https://app.aptidude.in/unsubscribe",
+      "permanent": false
     },
     {
       "source": "/ratings-explained",
-      "destination": "https://app.aptidude.in/ratings-explained"
+      "destination": "https://app.aptidude.in/ratings-explained",
+      "permanent": false
     },
     {
       "source": "/help",
-      "destination": "https://app.aptidude.in/help"
+      "destination": "https://app.aptidude.in/help",
+      "permanent": false
     }
   ]
 }
