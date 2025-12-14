@@ -26,7 +26,7 @@ const CONFIG = {
     indexNowEndpoint: 'https://api.indexnow.org/IndexNow',
     // You can also use Bing's endpoint directly: 'https://www.bing.com/IndexNow'
     sitemapUrl: 'https://aptidude.in/sitemap-index.xml',
-    batchSize: 10000, // IndexNow allows up to 10,000 URLs per request
+    batchSize: 500, // Using smaller batches for reliability (10,000 can cause issues)
 };
 
 // Parse command line arguments
@@ -165,9 +165,10 @@ async function submitToIndexNow(urls) {
             console.error(`❌ Batch ${i + 1}: Error submitting - ${error.message}`);
         }
 
-        // Small delay between batches to avoid rate limiting
+        // Delay between batches to avoid rate limiting (2 seconds)
         if (i < batches.length - 1) {
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            console.log('Waiting 2 seconds before next batch...');
+            await new Promise(resolve => setTimeout(resolve, 2000));
         }
     }
 }
