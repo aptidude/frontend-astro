@@ -168,6 +168,16 @@
       "source": "/help",
       "destination": "https://app.aptidude.in/help",
       "permanent": false
+    },
+    {
+      "source": "/partner-with-us",
+      "destination": "https://app.aptidude.in/partner-with-us",
+      "permanent": false
+    },
+    {
+      "source": "/learn",
+      "destination": "https://app.aptidude.in/learn",
+      "permanent": false
     }
   ]
 }
