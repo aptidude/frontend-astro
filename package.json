@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev --port 4321",
     "build": "astro build",
-    "build:prod": "cross-env API_URL=https://brokdpdvsizhwkjk42v5j6ltty0rdzzi.lambda-url.ap-south-1.on.aws/ PUBLIC_APP_URL=https://aptidude.in/app astro build",
+    "build:prod": "cross-env API_URL=https://f3wces7zyf.execute-api.ap-south-1.amazonaws.com PUBLIC_APP_URL=https://aptidude.in/app astro build",
     "preview": "astro preview --port 4321",
     "astro": "astro",
     "indexnow": "node scripts/submit-indexnow.js",
